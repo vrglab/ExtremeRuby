@@ -1,0 +1,24 @@
+
+{
+
+    "parent": "block/orientable",
+
+    "textures": {
+
+        "particle": "mmt:blocks/crusher_side",
+
+        "up": "mmt:blocks/crusher_top",
+
+        "down": "mmt:blocks/crusher_top",
+
+        "north": "mmt:blocks/crusher_front_off",
+
+        "east": "mmt:blocks/crusher_side",
+
+        "south": "mmt:blocks/crusher_side",
+
+        "west": "mmt:blocks/crusher_side"
+
+    }
+
+}

@@ -1,0 +1,30 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "RR",
+        "R/",
+        " /"
+    ],
+    
+    "key":
+    {
+        "R":
+        {
+            "item": "mmt:ruby"
+        },
+       
+        "/":
+        {
+           "item": "minecraft:stick"
+        }
+        
+    },
+    "result":
+    {
+        "item": "mmt:axe_ruby",
+        "count": 1
+    }
+  }
+}

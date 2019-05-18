@@ -1,0 +1,17 @@
+{
+
+    "variants": 
+
+    {
+
+        "burning=false,facing=north": { "model": "mmt:crafter" },
+
+        "burning=false,facing=east": { "model": "mmt:crafter", "y": 90 },
+
+        "burning=false,facing=south": { "model": "mmt:crafter", "y": 180 },
+
+        "burning=false,facing=west": { "model": "mmt:crafter", "y": 270 }
+
+    }
+
+}

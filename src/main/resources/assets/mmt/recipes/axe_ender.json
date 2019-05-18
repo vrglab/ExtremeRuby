@@ -1,0 +1,30 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "RR",
+        "R/",
+        " /"
+    ],
+    
+    "key":
+    {
+        "R":
+        {
+            "item": "mmt:obsidien_ingot"
+        },
+       
+        "/":
+        {
+           "item": "minecraft:stick"
+        }
+        
+    },
+    "result":
+    {
+        "item": "mmt:axe_ender",
+        "count": 1
+    }
+  }
+}

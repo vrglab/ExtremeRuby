@@ -1,0 +1,33 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        " R ",
+        " R ",
+        " S "
+    ],
+    
+    "key":
+    {
+        "R":
+        {
+            "item": "mmt:obsidien_ingot"
+        },
+       
+        "S":
+        {
+           "item": "minecraft:stick"
+        }
+        
+     
+     },
+    
+    "result":
+    {
+        "item": "mmt:sword_ender",
+        "count": 1
+    }
+    
+    }
+}

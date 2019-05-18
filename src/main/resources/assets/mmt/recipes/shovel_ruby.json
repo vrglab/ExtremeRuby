@@ -1,0 +1,30 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "R",
+        "/",
+        "/"
+    ],
+    
+    "key":
+    {
+        "R":
+        {
+            "item": "mmt:ruby"
+        },
+       
+        "/":
+        {
+           "item": "minecraft:stick"
+        }
+        
+    },
+    "result":
+    {
+        "item": "mmt:shovel_ruby",
+        "count": 1
+    }
+  }
+}

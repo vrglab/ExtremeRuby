@@ -1,0 +1,23 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "R"
+  
+    ],
+    
+    "key":
+    {
+        "R":
+        {
+            "item": "mmt:ruby"
+        }
+    },
+    
+    "result":
+    {
+        "item": "mmt:ruby_ingot",
+        "count": 9
+    }
+}

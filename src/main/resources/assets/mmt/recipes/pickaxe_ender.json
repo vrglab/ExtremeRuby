@@ -1,0 +1,30 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "RRR",
+        " S ",
+        " S "
+    ],
+    
+    "key":
+    {
+        "R":
+        {
+            "item": "mmt:obsidien_ingot"
+        },
+       
+        "S":
+        {
+           "item": "minecraft:stick"
+        }
+        
+    },
+    "result":
+    {
+        "item": "mmt:pickaxe_ender",
+        "count": 1
+    }
+  }
+}

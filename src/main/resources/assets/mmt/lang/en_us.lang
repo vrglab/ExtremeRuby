@@ -1,0 +1,77 @@
+
+
+
+//creativeTabs
+itemGroup.rubytab=Ruby tab
+
+
+//items
+item.ruby.name=Ruby
+item.obsidien_ingot.name=Obsidian Inggot
+item.ruby_ingot.name=Ruby Inggot
+item.ashes.name=Ashes
+item.ashes_on_fire.name=Ashes On Fire
+item.diamond_ashes.name=Diamond Ashes
+item.diamond_nugget.name=Diamond Nugget
+
+
+//blocks
+tile.block_ruby.name=Block of Ruby
+tile.gras_ruby.name=Ruby Grass
+
+//tools
+
+item.axe_ruby.name=Ruby Axe
+item.pickaxe_ruby.name=Ruby Pickaxe
+item.hoe_ruby.name=Ruby Hoe
+item.shovel_ruby.name=Ruby Shovel
+item.sword_ruby.name=Ruby Sword
+
+item.axe_ender.name=Obsidian Axe
+item.pickaxe_ender.name=Obsidian Pickaxe
+item.hoe_ender.name=Obsidian Hoe
+item.shovel_ender.name=Obsidian Shovel
+item.sword_ender.name=Obsidian Sword
+
+
+//armour
+
+item.helmet_ruby.name=Ruby Helmet
+item.chestplate_ruby.name=Ruby Chestplate
+item.leggings_ruby.name=Ruby Leggings
+item.boots_ruby.name=Ruby Boots
+
+item.helmet_ender.name=Obsidian Helmet
+item.chestplate_ender.name=Obsidian Chestplate
+item.leggings_ender.name=Obsidian Leggings
+item.boots_ender.name=Obsidian Boots
+
+
+
+//ore
+
+tile.ruby_ore.name=Ruby Ore
+tile.ender_ore.name=Obsidian Ore
+tile.copper_ore.name=Copper Ore
+
+//functianal blocks
+
+tile.crusher.name=Triple Furnace
+tile.crafter.name=Extreme Crafter
+
+
+//entity
+
+entity.ruby_villager.name=Ruby villager
+entity.EntityGhost.name=Ghost
+
+
+
+//food
+item.evil_appel.name=Evil Apple
+item.becon_raw.name=Raw Beccon
+item.becon.name=Cocked Beccon
+
+
+
+

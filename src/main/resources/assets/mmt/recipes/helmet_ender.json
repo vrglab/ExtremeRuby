@@ -1,0 +1,24 @@
+{
+    "type": "minecraft:crafting_shaped",
+    
+    "pattern":
+    [
+        "RRR",
+        "R R",
+        "   "
+    ],
+    
+    "key":
+    {
+        "R":
+        {
+            "item": "mmt:obsidien_ingot"
+        }
+    },
+    
+    "result":
+    {
+        "item": "mmt:helmet_ender",
+        "count": 1
+    }
+}

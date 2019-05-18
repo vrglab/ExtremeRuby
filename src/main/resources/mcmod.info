@@ -1,0 +1,16 @@
+[
+{
+  "modid": "mmt",
+  "name": "Extrem Ruby",
+  "description": "thinks whithe  ruby.",
+  "version": "1.0",
+  "mcversion": "1.12.1",
+  "url": "",
+  "updateUrl": "https://minecraft.curseforge.com/projects/extreme-ruby/files",
+  "authorList": ["vrglab"],
+  "credits": "harry talks",
+  "logoFile": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

@@ -1,0 +1,5 @@
+{
+    "variants": {
+        "normal": { "model": "mmt:gras_ruby" }
+    }
+}
