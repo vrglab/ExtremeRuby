@@ -3,16 +3,17 @@
   "id": "extreme_ruby",
   "version": "${version}",
   "name": "Extreme Ruby",
-  "description": "This is an Extreme Ruby description! Tell everyone what your mod is about!",
+  "description": "Remastered Version of the 1.12 mod Extreme Ruby",
   "authors": [
-    "Me!"
+    "Vrglab"
   ],
   "contact": {
-    "homepage": "https://fabricmc.net/",
-    "sources": "https://github.com/FabricMC/fabric-Extreme Ruby-mod"
+    "homepage": "https://www.curseforge.com/minecraft/mc-mods/extreme-ruby",
+    "sources": "https://github.com/vrglab/ExtremeRuby",
+    "issue-tracker": "https://github.com/vrglab/ExtremeRuby/issues"
   },
-  "license": "CC0-1.0",
-  "icon": "assets/extreme_ruby/icon.png",
+  "license": "MIT",
+  "icon": "logo.png",
   "environment": "*",
   "entrypoints": {
     "main": [
@@ -30,6 +31,7 @@
     "minecraft": "~1.19.2",
     "java": ">=17",
     "architectury": ">=6.6.92",
+    "vrglabslib": "*",
     "fabric-api": "*"
   },
   "suggests": {

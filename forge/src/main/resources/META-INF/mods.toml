@@ -1,17 +1,17 @@
 modLoader = "javafml"
 loaderVersion = "[43,)"
-#issueTrackerURL = ""
-license = "Insert License Here"
+issueTrackerURL = "https://github.com/vrglab/ExtremeRuby/issues"
+license = "MIT"
 
 [[mods]]
 modId = "extreme_ruby"
 version = "${version}"
 displayName = "Extreme Ruby"
-authors = "Me!"
+authors = "Vrglab"
 description = '''
-This is an Extreme Ruby description! Tell everyone what your mod is about!
+Remastered Version of the 1.12 mod Extreme Ruby
 '''
-#logoFile = ""
+logoFile = "logo.png"
 
 [[dependencies.extreme_ruby]]
 modId = "forge"
@@ -31,5 +31,12 @@ side = "BOTH"
 modId = "architectury"
 mandatory = true
 versionRange = "[6.6.92,)"
+ordering = "AFTER"
+side = "BOTH"
+
+[[dependencies.extreme_ruby]]
+modId = "vrglabslib"
+mandatory = true
+versionRange = "[1.0.0,)"
 ordering = "AFTER"
 side = "BOTH"

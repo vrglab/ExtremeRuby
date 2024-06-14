@@ -6,11 +6,11 @@
     "version": "${version}",
     "metadata": {
       "name": "Extreme Ruby",
-      "description": "This is an Extreme Ruby description! Tell everyone what your mod is about!",
+      "description": "Remastered Version of the 1.12 mod Extreme Ruby",
       "contributors": {
-        "Me!": "Author"
+        "Vrglab": "Author"
       },
-      "icon": "assets/extreme_ruby/icon.png"
+      "icon": "logo.png"
     },
     "intermediate_mappings": "net.fabricmc:intermediary",
     "entrypoints": {
@@ -34,6 +34,10 @@
       {
         "id": "architectury",
         "version": ">=6.6.92"
+      },
+      {
+        "id": "vrglabslib",
+        "versions": "*"
       }
     ]
   },
