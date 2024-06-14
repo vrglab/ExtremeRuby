@@ -1,0 +1,35 @@
+modLoader = "javafml"
+loaderVersion = "[43,)"
+#issueTrackerURL = ""
+license = "Insert License Here"
+
+[[mods]]
+modId = "extreme_ruby"
+version = "${version}"
+displayName = "Extreme Ruby"
+authors = "Me!"
+description = '''
+This is an Extreme Ruby description! Tell everyone what your mod is about!
+'''
+#logoFile = ""
+
+[[dependencies.extreme_ruby]]
+modId = "forge"
+mandatory = true
+versionRange = "[43,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.extreme_ruby]]
+modId = "minecraft"
+mandatory = true
+versionRange = "[1.19.2,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.extreme_ruby]]
+modId = "architectury"
+mandatory = true
+versionRange = "[6.6.92,)"
+ordering = "AFTER"
+side = "BOTH"

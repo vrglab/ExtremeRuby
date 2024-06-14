@@ -1,0 +1,43 @@
+{
+  "schema_version": 1,
+  "quilt_loader": {
+    "group": "${group}",
+    "id": "extreme_ruby",
+    "version": "${version}",
+    "metadata": {
+      "name": "Extreme Ruby",
+      "description": "This is an Extreme Ruby description! Tell everyone what your mod is about!",
+      "contributors": {
+        "Me!": "Author"
+      },
+      "icon": "assets/extreme_ruby/icon.png"
+    },
+    "intermediate_mappings": "net.fabricmc:intermediary",
+    "entrypoints": {
+      "init": [
+        "com.Vrglab.quilt.Extreme RubyModQuilt"
+      ]
+    },
+    "depends": [
+      {
+        "id": "quilt_loader",
+        "version": "*"
+      },
+      {
+        "id": "quilt_base",
+        "version": "*"
+      },
+      {
+        "id": "minecraft",
+        "version": ">=1.19.2"
+      },
+      {
+        "id": "architectury",
+        "version": ">=6.6.92"
+      }
+    ]
+  },
+  "mixin": [
+    "extreme_ruby.mixins.json"
+  ]
+}

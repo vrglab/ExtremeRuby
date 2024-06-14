@@ -1,0 +1,16 @@
+package com.Vrglab;
+
+import com.Vrglab.World.Blocks.ExBlocks;
+import com.Vrglab.World.Items.ExItemGroups;
+import com.Vrglab.World.Items.ExItems;
+import org.Vrglab.Modloader.Registration.Registry;
+
+public final class ExtremeRubyMod {
+    public static final String MOD_ID = "extreme_ruby";
+
+    public static void init() {
+        ExItemGroups.init();
+        ExItems.init();
+        ExBlocks.init();
+    }
+}
