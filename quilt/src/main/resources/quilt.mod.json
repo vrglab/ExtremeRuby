@@ -15,7 +15,7 @@
     "intermediate_mappings": "net.fabricmc:intermediary",
     "entrypoints": {
       "init": [
-        "com.Vrglab.quilt.Extreme RubyModQuilt"
+        "com.Vrglab.quilt.ExtremeRubyModQuilt"
       ]
     },
     "depends": [
@@ -42,6 +42,6 @@
     ]
   },
   "mixin": [
-    "extreme_ruby.mixins.json"
+
   ]
 }
