@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ooo",
+    "o o",
+    "o o"
+  ],
+  "key": {
+    "o": {
+      "item": "extreme_ruby:obsidianbits"
+    }
+  },
+  "result": {
+    "item": "extreme_ruby:obsidian_leggings",
+    "count": 1
+  }
+}
