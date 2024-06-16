@@ -12,6 +12,10 @@ import java.util.function.Supplier;
 public enum ToolMaterials implements net.minecraft.item.ToolMaterial {
     RUBY(5, 3031,10.0f, 5.0f, 22, ()-> {
         return Ingredient.ofItems(new ItemConvertible[]{(Item)TypeTransformer.ObjectToType.accept(ExItems.RUBY)});
+    }),
+
+    OBSIDIAN(6, 5031,13.0f, 10.0f, 35, ()-> {
+        return Ingredient.ofItems(new ItemConvertible[]{(Item)TypeTransformer.ObjectToType.accept(ExItems.OBSIDIANBITS)});
     })
 ;
 

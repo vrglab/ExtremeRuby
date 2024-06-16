@@ -13,9 +13,13 @@ public class ExItems {
     /** INGOT BASED ITEMS **/
     public static Object RUBY = Registry.RegisterItem("ruby", ExtremeRubyMod.MOD_ID,
             ()->new Item(getBaseSettings()));
+    public static Object OBSIDIANBITS = Registry.RegisterItem("obsidianbits", ExtremeRubyMod.MOD_ID,
+            ()->new Item(getBaseSettings()));
 
 
     /** TOOLS **/
+
+    /** RUBY **/
     public static Object RUBY_SWORD = Registry.RegisterItem("ruby_sword", ExtremeRubyMod.MOD_ID,
             ()->new SwordItem(ToolMaterials.RUBY, 5, -2.9f, getBaseSettings()));
     public static Object RUBY_PICKAXE = Registry.RegisterItem("ruby_pickaxe", ExtremeRubyMod.MOD_ID,
@@ -26,6 +30,18 @@ public class ExItems {
             ()->new ShovelItem(ToolMaterials.RUBY, 2, -1, getBaseSettings()));
     public static Object RUBY_HOE = Registry.RegisterItem("ruby_hoe", ExtremeRubyMod.MOD_ID,
             ()->new HoeItem(ToolMaterials.RUBY, 2, -1, getBaseSettings()));
+
+    /** OBSIDIAN **/
+    public static Object OBSIDIAN_SWORD = Registry.RegisterItem("obsidian_sword", ExtremeRubyMod.MOD_ID,
+            ()->new SwordItem(ToolMaterials.OBSIDIAN, 8, -2f, getBaseSettings()));
+    public static Object OBSIDIAN_PICKAXE = Registry.RegisterItem("obsidian_pickaxe", ExtremeRubyMod.MOD_ID,
+            ()->new PickaxeItem(ToolMaterials.OBSIDIAN, 3, -2.4f, getBaseSettings()));
+    public static Object OBSIDIAN_AXE = Registry.RegisterItem("obsidian_axe", ExtremeRubyMod.MOD_ID,
+            ()->new AxeItem(ToolMaterials.OBSIDIAN, 10, -3, getBaseSettings()));
+    public static Object OBSIDIAN_SHOVEL = Registry.RegisterItem("obsidian_shovel", ExtremeRubyMod.MOD_ID,
+            ()->new ShovelItem(ToolMaterials.OBSIDIAN, 2, -1, getBaseSettings()));
+    public static Object OBSIDIAN_HOE = Registry.RegisterItem("obsidian_hoe", ExtremeRubyMod.MOD_ID,
+            ()->new HoeItem(ToolMaterials.OBSIDIAN, 2, -1, getBaseSettings()));
 
     /** ARMOUR **/
     public static Object RUBY_HELMET = Registry.RegisterItem("ruby_helmet", ExtremeRubyMod.MOD_ID,
