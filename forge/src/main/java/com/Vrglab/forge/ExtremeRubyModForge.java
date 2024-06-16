@@ -15,11 +15,4 @@ public final class ExtremeRubyModForge {
         ForgeRegistryCreator.Create(FMLJavaModLoadingContext.get().getModEventBus(), ExtremeRubyMod.MOD_ID);
         ExtremeRubyMod.init();
     }
-
-    @SubscribeEvent
-    public void lootTableLoadEvent(LootTableLoadEvent e){
-        if (e.getName().equals(LootTableReplacebles.ORIGINAL_OBSIDIAN)) {
-            e.setTable(e.getLootTableManager().getTable(LootTableReplacebles.NEW_OBSIDIAN));
-        }
-    }
 }
