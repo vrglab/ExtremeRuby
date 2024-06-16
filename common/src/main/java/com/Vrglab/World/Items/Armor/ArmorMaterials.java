@@ -16,7 +16,12 @@ import java.util.function.Supplier;
 public enum ArmorMaterials implements net.minecraft.item.ArmorMaterial {
     RUBY("ruby", 46,   new int[]{4, 7, 9, 4}, 22, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 4.0F, 0.2F, () -> {
         return Ingredient.ofItems(new ItemConvertible[]{(Item)TypeTransformer.ObjectToType.accept(ExItems.RUBY)});
-    });
+    }),
+
+    OBSIDIAN("obsidian", 66,   new int[]{5, 8, 10, 5}, 35, SoundEvents.ITEM_ARMOR_EQUIP_DIAMOND, 6.0F, 0.9F, () -> {
+        return Ingredient.ofItems(new ItemConvertible[]{(Item)TypeTransformer.ObjectToType.accept(ExItems.RUBY)});
+    })
+    ;
 
 
 

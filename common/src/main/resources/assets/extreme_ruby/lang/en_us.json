@@ -1,5 +1,5 @@
 {
-  "itemGroup.extremeruby_creative_tab": "Extreme Ruby",
+  "itemGroup.extreme_ruby.creative_tab": "Extreme Ruby",
   "item.extreme_ruby.ruby": "Ruby",
   "item.extreme_ruby.ruby_sword": "Ruby Sword",
   "item.extreme_ruby.ruby_pickaxe": "Ruby Pickaxe",
@@ -12,5 +12,15 @@
   "item.extreme_ruby.ruby_chestplate": "Ruby Chestplate",
   "block.extreme_ruby.ruby_block": "Ruby Block",
   "block.extreme_ruby.ruby_ore": "Ruby Ore",
-  "block.extreme_ruby.deepslate_ruby_ore": "Deepslate Ruby Ore"
+  "block.extreme_ruby.deepslate_ruby_ore": "Deepslate Ruby Ore",
+  "item.extreme_ruby.obsidianbits": "Obsidian Bits",
+  "item.extreme_ruby.obsidian_sword": "Obsidian Sword",
+  "item.extreme_ruby.obsidian_pickaxe": "Obsidian Pickaxe",
+  "item.extreme_ruby.obsidian_axe": "Obsidian Axe",
+  "item.extreme_ruby.obsidian_shovel": "Obsidian Shovel",
+  "item.extreme_ruby.obsidian_hoe": "Obsidian Hoe",
+  "item.extreme_ruby.obsidian_helmet": "Obsidian Helmet",
+  "item.extreme_ruby.obsidian_boots": "Obsidian Boots",
+  "item.extreme_ruby.obsidian_leggings": "Obsidian Leggings",
+  "item.extreme_ruby.obsidian_chestplate": "Obsidian Chestplate"
 }
