@@ -12,4 +12,7 @@ dependencies {
     modImplementation "dev.architectury:architectury:$rootProject.architectury_api_version"
 
     modImplementation "org.Vrglab:vrglabslib:common-$rootProject.vrglabs_lib_version-mc$rootProject.minecraft_version"
+    modImplementation "software.bernie.geckolib:geckolib-fabric-$rootProject.geckolib_minecraft_version:$rootProject.geckolib_version"
+    implementation("com.eliotlash.mclib:mclib:20")
+
 }
