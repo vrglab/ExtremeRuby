@@ -5,6 +5,7 @@ import com.Vrglab.World.Gen.ExWorldGen;
 import com.Vrglab.World.Items.ExItemGroups;
 import com.Vrglab.World.Items.ExItems;
 import com.Vrglab.World.Rendering.ExGeckoRenderers;
+import net.minecraft.loot.entry.LootTableEntry;
 import org.Vrglab.Modloader.Registration.Registry;
 
 public final class ExtremeRubyMod {

@@ -1,6 +1,8 @@
 package com.Vrglab.forge;
 
-import dev.architectury.platform.forge.EventBuses;
+import com.Vrglab.World.loottable.LootTableReplacebles;
+import net.minecraftforge.event.LootTableLoadEvent;
+import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
@@ -14,5 +16,12 @@ public final class ExtremeRubyModForge {
         ForgeRegistryCreator.Create(FMLJavaModLoadingContext.get().getModEventBus(), ExtremeRubyMod.MOD_ID);
         ExtremeRubyMod.init();
         GeckoLib.initialize();
+    }
+
+    @SubscribeEvent
+    public void lootTableLoadEvent(LootTableLoadEvent e){
+        if (e.getName().equals(LootTableReplacebles.ORIGINAL_OBSIDIAN)) {
+            e.setTable(e.getLootTableManager().getTable(LootTableReplacebles.NEW_OBSIDIAN));
+        }
     }
 }
