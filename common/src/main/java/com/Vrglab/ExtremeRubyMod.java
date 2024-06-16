@@ -4,6 +4,7 @@ import com.Vrglab.World.Blocks.ExBlocks;
 import com.Vrglab.World.Gen.ExWorldGen;
 import com.Vrglab.World.Items.ExItemGroups;
 import com.Vrglab.World.Items.ExItems;
+import com.Vrglab.World.Rendering.ExGeckoRenderers;
 import org.Vrglab.Modloader.Registration.Registry;
 
 public final class ExtremeRubyMod {
@@ -14,5 +15,6 @@ public final class ExtremeRubyMod {
         ExItems.init();
         ExBlocks.init();
         ExWorldGen.init();
+        ExGeckoRenderers.init();
     }
 }
