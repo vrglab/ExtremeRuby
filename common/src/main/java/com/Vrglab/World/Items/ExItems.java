@@ -17,7 +17,7 @@ public class ExItems {
             ()->new Item(getBaseSettings()));
 
 
-    /** TOOLS **/
+    /**** TOOLS ****/
 
     /** RUBY **/
     public static Object RUBY_SWORD = Registry.RegisterItem("ruby_sword", ExtremeRubyMod.MOD_ID,
@@ -43,7 +43,9 @@ public class ExItems {
     public static Object OBSIDIAN_HOE = Registry.RegisterItem("obsidian_hoe", ExtremeRubyMod.MOD_ID,
             ()->new HoeItem(ToolMaterials.OBSIDIAN, 2, -1, getBaseSettings()));
 
-    /** ARMOUR **/
+    /**** ARMOUR ****/
+
+    /** RUBY **/
     public static Object RUBY_HELMET = Registry.RegisterItem("ruby_helmet", ExtremeRubyMod.MOD_ID,
             ()->new RubyArmorItem(ArmorMaterials.RUBY, EquipmentSlot.HEAD, getBaseSettings()));
     public static Object RUBY_CHESTPLATE = Registry.RegisterItem("ruby_chestplate", ExtremeRubyMod.MOD_ID,
@@ -53,6 +55,16 @@ public class ExItems {
     public static Object RUBY_BOOTS = Registry.RegisterItem("ruby_boots", ExtremeRubyMod.MOD_ID,
             ()->new RubyArmorItem(ArmorMaterials.RUBY, EquipmentSlot.FEET, getBaseSettings()));
 
+
+    /** OBSIDIAN **/
+    public static Object OBSIDIAN_HELMET = Registry.RegisterItem("obsidian_helmet", ExtremeRubyMod.MOD_ID,
+            ()->new RubyArmorItem(ArmorMaterials.OBSIDIAN, EquipmentSlot.HEAD, getBaseSettings()));
+    public static Object OBSIDIAN_CHESTPLATE = Registry.RegisterItem("obsidian_chestplate", ExtremeRubyMod.MOD_ID,
+            ()->new RubyArmorItem(ArmorMaterials.OBSIDIAN, EquipmentSlot.CHEST, getBaseSettings()));
+    public static Object OBSIDIAN_LEGGINGS = Registry.RegisterItem("obsidian_leggings", ExtremeRubyMod.MOD_ID,
+            ()->new RubyArmorItem(ArmorMaterials.OBSIDIAN, EquipmentSlot.LEGS, getBaseSettings()));
+    public static Object OBSIDIAN_BOOTS = Registry.RegisterItem("obsidian_boots", ExtremeRubyMod.MOD_ID,
+            ()->new RubyArmorItem(ArmorMaterials.OBSIDIAN, EquipmentSlot.FEET, getBaseSettings()));
 
     private static Item.Settings getBaseSettings(){
         return new Item.Settings().group(ExItemGroups.EXTREME_RUBY_CREATIVE_GROUP);
