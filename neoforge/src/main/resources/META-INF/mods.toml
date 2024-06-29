@@ -1,0 +1,36 @@
+modLoader = "javafml"
+loaderVersion = "[2,)"
+issueTrackerURL = "https://github.com/vrglab/ExtremeRuby/issues"
+license = "MIT"
+
+[[mods]]
+modId = "extreme_ruby"
+version = "${version}"
+displayName = "Extreme Ruby"
+authors = "Vrglab"
+description = '''
+Remastered Version of the 1.12 mod Extreme Ruby
+'''
+logoFile = "logo.png"
+
+[[dependencies.extreme_ruby]]
+modId = "neoforge"
+type = "required"
+versionRange = "[20.4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.extreme_ruby]]
+modId = "minecraft"
+type = "required"
+versionRange = "[1.20.4,)"
+ordering = "NONE"
+side = "BOTH"
+
+[[dependencies.extreme_ruby]]
+modId = "architectury"
+type = "required"
+versionRange = "[11.1.17,)"
+ordering = "AFTER"
+side = "BOTH"
+

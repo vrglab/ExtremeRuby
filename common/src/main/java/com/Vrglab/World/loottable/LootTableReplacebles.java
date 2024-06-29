@@ -1,10 +1,11 @@
 package com.Vrglab.World.loottable;
 
 import com.Vrglab.ExtremeRubyMod;
-import net.minecraft.util.Identifier;
+import com.Vrglab.Utils.Utils;
+import net.minecraft.resources.ResourceLocation;
 
 public class LootTableReplacebles {
 
-    public static final Identifier ORIGINAL_OBSIDIAN = new Identifier("minecraft", "blocks/obsidian");
-    public static final Identifier NEW_OBSIDIAN = new Identifier(ExtremeRubyMod.MOD_ID, "blocks/obsidian");
+    public static final ResourceLocation ORIGINAL_OBSIDIAN = new ResourceLocation("minecraft", "blocks/obsidian");
+    public static final ResourceLocation NEW_OBSIDIAN = Utils.createLocation("blocks/obsidian");
 }

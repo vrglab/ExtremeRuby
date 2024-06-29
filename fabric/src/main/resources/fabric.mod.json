@@ -21,6 +21,9 @@
     ],
     "client": [
       "com.Vrglab.fabric.client.ExtremeRubyModFabricClient"
+    ],
+    "fabric-datagen": [
+      "com.Vrglab.fabric.datagen.ExDataGen"
     ]
   },
   "mixins": [
@@ -28,11 +31,12 @@
   ],
   "depends": {
     "fabricloader": ">=0.15.11",
-    "minecraft": "~1.19.2",
+    "minecraft": "~1.20.4",
     "java": ">=17",
-    "architectury": ">=6.6.92",
-    "vrglabslib": "*",
-    "fabric-api": "*"
+    "architectury": ">=11.1.17",
+    "fabric-api": "*",
+    "azurelib": ">=2.1.12",
+    "vrglabslib": "*"
   },
   "suggests": {
     "another-mod": "*"

@@ -12,5 +12,5 @@ rootProject.name = 'extreme_ruby'
 include 'common'
 include 'fabric'
 include 'fabric-like'
-include 'forge'
+include "neoforge"
 include 'quilt'

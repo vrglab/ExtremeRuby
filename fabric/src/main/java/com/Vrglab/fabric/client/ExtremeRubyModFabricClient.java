@@ -7,6 +7,6 @@ import org.Vrglab.fabriclike.Utils.FabricLikeRegisteryCreator;
 public final class ExtremeRubyModFabricClient implements ClientModInitializer {
     @Override
     public void onInitializeClient() {
-        FabricLikeRegisteryCreator.CreateClient(ExtremeRubyMod.MOD_ID);
+        //FabricLikeRegisteryCreator.CreateClient(ExtremeRubyMod.MOD_ID);
     }
 }

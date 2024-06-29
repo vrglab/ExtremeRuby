@@ -1,21 +1,36 @@
 package com.Vrglab.World.Items.extras;
 
 import com.Vrglab.World.Items.ExItems;
-import net.minecraft.item.Item;
-import net.minecraft.item.ItemConvertible;
-import net.minecraft.recipe.Ingredient;
-import net.minecraft.util.Lazy;
+import net.minecraft.world.item.Item;
+import net.minecraft.world.item.Items;
+import net.minecraft.world.item.Tier;
+import net.minecraft.world.item.crafting.Ingredient;
+import net.minecraft.world.level.ItemLike;
 import org.Vrglab.Modloader.CreationHelpers.TypeTransformer;
 
 import java.util.function.Supplier;
 
-public enum ToolMaterials implements net.minecraft.item.ToolMaterial {
+public enum ToolMaterials implements Tier {
     RUBY(5, 3031,10.0f, 5.0f, 22, ()-> {
-        return Ingredient.ofItems(new ItemConvertible[]{(Item)TypeTransformer.ObjectToType.accept(ExItems.RUBY)});
+        return Ingredient.of(new ItemLike() {
+            @Override
+            public Item asItem() {
+                return (Item)TypeTransformer.ObjectToType.accept(ExItems.RUBY);
+            }
+        });
     }),
 
     OBSIDIAN(6, 5031,13.0f, 10.0f, 35, ()-> {
-        return Ingredient.ofItems(new ItemConvertible[]{(Item)TypeTransformer.ObjectToType.accept(ExItems.OBSIDIANBITS)});
+        return Ingredient.of(new ItemLike() {
+            @Override
+            public Item asItem() {
+                return (Item)TypeTransformer.ObjectToType.accept(ExItems.OBSIDIANBITS);
+            }
+        });
+    }),
+
+    AMETHYST(0, 32, 12.0F, 0.0F, 22, () -> {
+        return Ingredient.of(new ItemLike[]{Items.AMETHYST_SHARD});
     })
 ;
 
@@ -25,7 +40,7 @@ public enum ToolMaterials implements net.minecraft.item.ToolMaterial {
     private final float miningSpeed;
     private final float attackDamage;
     private final int enchantability;
-    private final Lazy<Ingredient> repairIngredient;
+    private final Supplier<Ingredient> repairIngredient;
 
     ToolMaterials(int miningLevel, int itemDurability, float miningSpeed, float attackDamage, int enchantability, Supplier repairIngredient) {
         this.miningLevel = miningLevel;
@@ -33,36 +48,36 @@ public enum ToolMaterials implements net.minecraft.item.ToolMaterial {
         this.miningSpeed = miningSpeed;
         this.attackDamage = attackDamage;
         this.enchantability = enchantability;
-        this.repairIngredient = new Lazy<>(repairIngredient);
+        this.repairIngredient = repairIngredient;
     }
 
     @Override
-    public int getDurability() {
+    public int getUses() {
         return this.itemDurability;
     }
 
     @Override
-    public float getMiningSpeedMultiplier() {
+    public float getSpeed() {
         return this.miningSpeed;
     }
 
     @Override
-    public float getAttackDamage() {
+    public float getAttackDamageBonus() {
         return this.attackDamage;
     }
 
     @Override
-    public int getMiningLevel() {
+    public int getLevel() {
         return this.miningLevel;
     }
 
     @Override
-    public int getEnchantability() {
+    public int getEnchantmentValue() {
         return this.enchantability;
     }
 
     @Override
     public Ingredient getRepairIngredient() {
-        return (Ingredient)this.repairIngredient.get();
+        return (Ingredient) this.repairIngredient.get();
     }
 }
