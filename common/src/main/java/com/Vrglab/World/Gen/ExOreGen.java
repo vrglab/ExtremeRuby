@@ -2,7 +2,11 @@ package com.Vrglab.World.Gen;
 
 import com.Vrglab.ExtremeRubyMod;
 import com.Vrglab.World.Blocks.ExBlocks;
-import net.minecraft.world.gen.GenerationStep;
+import dev.architectury.registry.level.biome.BiomeModifications;
+import net.minecraft.core.Holder;
+import net.minecraft.resources.ResourceKey;
+import net.minecraft.world.level.levelgen.GenerationStep;
+import net.minecraft.world.level.levelgen.placement.PlacedFeature;
 import org.Vrglab.Modloader.CreationHelpers.*;
 import org.Vrglab.Modloader.Registration.Registry;
 import org.Vrglab.Modloader.enumTypes.GenReplaceables;
@@ -24,7 +28,7 @@ public class ExOreGen {
             CountModifier(7).HeightRangePlacement(-80,80).build());
 
     public static void init(){
-        Registry.AddBiomeModification("ruby_ore_biom_mod", ExtremeRubyMod.MOD_ID, VinillaBiomeTypes.OVERWORLD, GenerationStep.Feature.UNDERGROUND_ORES, RUBY_ORE_PLACED);
-        Registry.AddBiomeModification("deepslate_ruby_ore_biom_mod", ExtremeRubyMod.MOD_ID, VinillaBiomeTypes.OVERWORLD, GenerationStep.Feature.UNDERGROUND_ORES, DEEPSLATE_RUBY_ORE_PLACED);
+        Registry.AddBiomeModification("ruby_ore_biom_mod", ExtremeRubyMod.MOD_ID, VinillaBiomeTypes.OVERWORLD, GenerationStep.Decoration.UNDERGROUND_ORES, RUBY_ORE_PLACED);
+        Registry.AddBiomeModification("deepslate_ruby_ore_biom_mod", ExtremeRubyMod.MOD_ID, VinillaBiomeTypes.OVERWORLD, GenerationStep.Decoration.UNDERGROUND_ORES, DEEPSLATE_RUBY_ORE_PLACED);
     }
 }

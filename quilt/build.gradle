@@ -41,6 +41,7 @@ dependencies {
         exclude group: 'net.fabricmc.fabric-api'
     }
     modImplementation "org.Vrglab:vrglabslib:quilt-$rootProject.vrglabs_lib_version-mc$rootProject.minecraft_version"
+    modImplementation "org.Vrglab.AzureLib:azureLib:quilt-$rootProject.vrglabs_azure_lib_version-mc$rootProject.minecraft_version"
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionQuilt')
     common(project(path: ':fabric-like', configuration: 'namedElements')) { transitive false }
