@@ -12,7 +12,9 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.world.item.*;
 import org.Vrglab.Modloader.Registration.Registry;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class ExItems {
@@ -73,7 +75,7 @@ public class ExItems {
     /** ITEM SETTINGS HELPER FUNCTIONS **/
 
     private static Item.Properties getBaseSettings(){
-        return new Item.Properties().arch$tab(ExItemGroups.EXTREME_RUBY_CREATIVE_GROUP);
+        return new Item.Properties();
     }
     private static Item.Properties getBaseSettings(ResourceKey<CreativeModeTab> tab){
         return new Item.Properties().arch$tab(tab);
@@ -149,7 +151,33 @@ public class ExItems {
         return createArmorSet(name, material, armor_class, new Item.Properties[]{item_properties, item_properties, item_properties, item_properties,item_properties});
     }
 
+    /** get all mapping helper **/
+
+    private static void mapItems(Map map, List<Object> obj_list){
+        for (var obj:map.values()) {
+            obj_list.add(obj);
+        }
+    }
+
+    private static void mapSet(Map item_map, Map armor_map,List<Object> obj_list){
+        mapItems(item_map, obj_list);
+        mapItems(armor_map, obj_list);
+    }
 
     public static void init(){
+    }
+
+    public static Object[] getAll(){
+        List<Object> objs = new ArrayList<>();
+
+        objs.add(RUBY);
+        objs.add(OBSIDIANBITS);
+
+        mapSet(RUBY_TOOL_SET, RUBY_ARMOR_SET, objs);
+        mapSet(OBSIDIAN_TOOL_SET, OBSIDIAN_ARMOR_SET, objs);
+        mapSet(AMETHYST_TOOL_SET, AMETHYST_ARMOR_SET, objs);
+        mapSet(REDSTONE_TOOL_SET, REDSTONE_ARMOR_SET, objs);
+
+        return objs.toArray();
     }
 }
