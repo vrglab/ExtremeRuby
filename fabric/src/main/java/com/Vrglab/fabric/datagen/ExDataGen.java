@@ -5,8 +5,6 @@ import net.fabricmc.fabric.api.datagen.v1.DataGeneratorEntrypoint;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataGenerator;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.data.DataProvider;
-import org.Vrglab.Utils.Modinfo;
-import org.Vrglab.fabric.VLWorldGen;
 import org.Vrglab.fabriclike.Utils.FabricLikeRegisteryCreator;
 
 public class ExDataGen  implements DataGeneratorEntrypoint {

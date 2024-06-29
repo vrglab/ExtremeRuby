@@ -5,6 +5,7 @@ import com.Vrglab.World.Gen.ExWorldGen;
 import com.Vrglab.World.Items.ExItemGroups;
 import com.Vrglab.World.Items.ExItems;
 import com.Vrglab.World.Rendering.ExGeckoRenderers;
+import org.Vrglab.AzureLib.VlAzureLibMod;
 
 public final class ExtremeRubyMod {
     public static final String MOD_ID = "extreme_ruby";

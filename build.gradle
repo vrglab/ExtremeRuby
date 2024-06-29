@@ -13,10 +13,6 @@ allprojects {
     version = rootProject.mod_version
     repositories {
         maven {
-            name = "AzureLib"
-            url 'https://libs.azuredoom.com:4443/mods'
-        }
-        maven {
             name = "modMenu"
             url "https://maven.terraformersmc.com/releases"
         }
@@ -27,14 +23,6 @@ allprojects {
         maven {
             name = "Vrglabs AzureLib"
             url "https://maven-thevrglab--version1-0-2qm5bfnj.web.app"
-        }
-        maven {
-            name = 'GeckoLib'
-            url 'https://dl.cloudsmith.io/public/geckolib3/geckolib/maven/'
-            content {
-                includeGroupByRegex("software\\.bernie.*")
-                includeGroup("com.eliotlash.mclib")
-            }
         }
     }
 }
