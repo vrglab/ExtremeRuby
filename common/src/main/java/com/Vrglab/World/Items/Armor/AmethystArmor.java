@@ -25,21 +25,11 @@ public class AmethystArmor extends AzureArmor {
         controllerList.add(new AnimationController(this, "idleController", 0, event -> {
             return event.setAndContinue(RawAnimation.begin().thenLoop("idle"));
         }));
-        return new ICallBack() {
-            @Override
-            public Object accept(Object... args) {
-                return controllerList;
-            }
-        };
+        return (args)->controllerList;
     }
 
     @Override
     public Supplier<GeoModel<? extends AzureArmor>> getModel() {
-        return new Supplier<GeoModel<? extends AzureArmor>>() {
-            @Override
-            public GeoModel<? extends AzureArmor> get() {
-                return new AmethystArmorModel();
-            }
-        };
+        return ()->new AmethystArmorModel();
     }
 }
