@@ -31,6 +31,10 @@ public enum ToolMaterials implements Tier {
 
     AMETHYST(0, 32, 12.0F, 0.0F, 22, () -> {
         return Ingredient.of(new ItemLike[]{Items.AMETHYST_SHARD});
+    }),
+
+    REDSTONE(5, 3031,10.0f, 5.0f, 22, ()-> {
+        return Ingredient.of(new ItemLike[]{Items.REDSTONE});
     })
 ;
 

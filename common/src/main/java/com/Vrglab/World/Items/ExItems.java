@@ -42,7 +42,7 @@ public class ExItems {
 
     /** REDSTONE **/
 
-    public static Map<ResourceLocation, Object> REDSTONE_TOOL_SET = createToolSet("redstone", ToolMaterials.AMETHYST, new int[]{8, 3, 10, 2, 2}, new float[]{-2f, -2.4f, -3f, -1f, -1f}, getBaseSettings());
+    public static Map<ResourceLocation, Object> REDSTONE_TOOL_SET = createToolSet("redstone", ToolMaterials.REDSTONE, new int[]{8, 3, 10, 2, 2}, new float[]{-2f, -2.4f, -3f, -1f, -1f}, getBaseSettings());
 
 
 
