@@ -21,14 +21,14 @@ public enum ArmorMaterials implements ArmorMaterial {
         return Ingredient.of(new ItemLike[]{(Item)TypeTransformer.ObjectToType.accept(ExItems.RUBY)});
     }),
 
-    OBSIDIAN("obsidian", 66,   new int[]{5, 8, 10, 5}, 35, SoundEvents.ARMOR_EQUIP_DIAMOND, 6.0F, 0.9F, () -> {
+    OBSIDIAN("obsidian", 66,   new int[]{5, 8, 10, 5}, 35, SoundEvents.ARMOR_EQUIP_NETHERITE, 6.0F, 0.9F, () -> {
         return Ingredient.of(new ItemLike[]{(Item)TypeTransformer.ObjectToType.accept(ExItems.OBSIDIANBITS)});
     }),
 
     AMETHYST("amethyst", 7, new int[]{1, 3, 5, 2}, 25, SoundEvents.AMETHYST_BLOCK_STEP, 0.0F, 0.0F, () -> {
         return Ingredient.of(new ItemLike[]{Items.AMETHYST_SHARD});
     }),
-    REDSTONE("redstone", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.ARMOR_EQUIP_DIAMOND, 2.0F, 0.0F, () -> {
+    REDSTONE("redstone", 33, new int[]{3, 6, 8, 3}, 10, SoundEvents.ARMOR_EQUIP_GENERIC, 2.0F, 0.0F, () -> {
         return Ingredient.of(new ItemLike[]{Items.REDSTONE});
     })
     ;
