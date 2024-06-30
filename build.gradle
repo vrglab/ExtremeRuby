@@ -17,12 +17,8 @@ allprojects {
             url "https://maven.terraformersmc.com/releases"
         }
         maven {
-            name = "Vrglabs Lib"
+            name = "Vrglab"
             url "https://maven.thevrglab.com/"
-        }
-        maven {
-            name = "Vrglabs AzureLib"
-            url "https://maven-thevrglab--version1-0-2qm5bfnj.web.app"
         }
     }
 }
