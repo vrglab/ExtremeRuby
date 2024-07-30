@@ -26,5 +26,19 @@
   "item.extreme_ruby.amethyst_helmet": "Amethyst Helmet",
   "item.extreme_ruby.amethyst_boots": "Amethyst Boots",
   "item.extreme_ruby.amethyst_leggings": "Amethyst Leggings",
-  "item.extreme_ruby.amethyst_chestplate": "Amethyst Chestplate"
+  "item.extreme_ruby.amethyst_chestplate": "Amethyst Chestplate",
+  "item.extreme_ruby.amethyst_sword": "Amethyst Sword",
+  "item.extreme_ruby.amethyst_pickaxe": "Amethyst Pickaxe",
+  "item.extreme_ruby.amethyst_axe": "Amethyst Axe",
+  "item.extreme_ruby.amethyst_shovel": "Amethyst Shovel",
+  "item.extreme_ruby.amethyst_hoe": "Amethyst Hoe",
+  "item.extreme_ruby.redstone_helmet": "Redstone Helmet",
+  "item.extreme_ruby.redstone_boots": "Redstone Boots",
+  "item.extreme_ruby.redstone_leggings": "Redstone Leggings",
+  "item.extreme_ruby.redstone_chestplate": "Redstone Chestplate",
+  "item.extreme_ruby.redstone_sword": "Redstone Sword",
+  "item.extreme_ruby.redstone_pickaxe": "Redstone Pickaxe",
+  "item.extreme_ruby.redstone_axe": "Redstone Axe",
+  "item.extreme_ruby.redstone_shovel": "Redstone Shovel",
+  "item.extreme_ruby.redstone_hoe": "Redstone Hoe"
 }
