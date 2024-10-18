@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "ooo",
+    "o o"
+  ],
+  "key": {
+    "o": {
+      "item": "minecraft:amethyst_cluster"
+    }
+  },
+  "result": {
+    "item": "extreme_ruby:amethyst_helmet",
+    "count": 1
+  }
+}
