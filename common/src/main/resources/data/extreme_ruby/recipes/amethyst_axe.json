@@ -1,0 +1,20 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "oo ",
+    "os ",
+    " s "
+  ],
+  "key": {
+    "s": {
+      "item": "minecraft:stick"
+    },
+    "o": {
+      "item": "minecraft:amethyst_cluster"
+    }
+  },
+  "result": {
+    "item": "extreme_ruby:amethyst_axe",
+    "count": 1
+  }
+}

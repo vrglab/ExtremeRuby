@@ -38,7 +38,7 @@ dependencies {
     modImplementation "dev.architectury:architectury-neoforge:$rootProject.architectury_api_version"
     modImplementation "org.Vrglab:vrglabslib:common-$rootProject.vrglabs_lib_version-mc$rootProject.minecraft_version"
     modImplementation "org.Vrglab:vrglabslib:neoforge-$rootProject.vrglabs_lib_version-mc$rootProject.minecraft_version"
-    modImplementation "org.Vrglab.AzureLib:azureLib:neoforge-$rootProject.vrglabs_lib_version-mc$rootProject.minecraft_version"
+    modImplementation "org.Vrglab.AzureLib:azureLib:neoforge-$rootProject.vrglabs_azure_lib_version-mc$rootProject.minecraft_version"
 
     common(project(path: ':common', configuration: 'namedElements')) { transitive false }
     shadowBundle project(path: ':common', configuration: 'transformProductionNeoForge')
