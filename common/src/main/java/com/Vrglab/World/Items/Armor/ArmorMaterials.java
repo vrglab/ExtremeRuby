@@ -12,17 +12,18 @@ import net.minecraft.world.item.Items;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import org.Vrglab.Modloader.CreationHelpers.TypeTransformer;
+import org.Vrglab.Utils.Utils;
 
 import java.util.EnumMap;
 import java.util.function.Supplier;
 
 public enum ArmorMaterials implements ArmorMaterial {
     RUBY("ruby", 46,   new int[]{4, 7, 9, 4}, 22, SoundEvents.ARMOR_EQUIP_DIAMOND, 4.0F, 0.2F, () -> {
-        return Ingredient.of(new ItemLike[]{(Item)TypeTransformer.ObjectToType.accept(ExItems.RUBY)});
+        return Ingredient.of(new ItemLike[]{Utils.convertToMcSafeType(ExItems.RUBY)});
     }),
 
     OBSIDIAN("obsidian", 66,   new int[]{5, 8, 8, 5}, 35, SoundEvents.ARMOR_EQUIP_NETHERITE, 4.0F, 0.1F, () -> {
-        return Ingredient.of(new ItemLike[]{(Item)TypeTransformer.ObjectToType.accept(ExItems.OBSIDIANBITS)});
+        return Ingredient.of(new ItemLike[]{Utils.convertToMcSafeType(ExItems.OBSIDIANBITS)});
     }),
 
     AMETHYST("amethyst", 7, new int[]{1, 3, 5, 2}, 25, SoundEvents.AMETHYST_BLOCK_STEP, 0.0F, 0.0F, () -> {
