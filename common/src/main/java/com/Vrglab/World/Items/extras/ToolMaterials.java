@@ -7,6 +7,7 @@ import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.ItemLike;
 import org.Vrglab.Modloader.CreationHelpers.TypeTransformer;
+import org.Vrglab.Utils.Utils;
 
 import java.util.function.Supplier;
 
@@ -15,7 +16,7 @@ public enum ToolMaterials implements Tier {
         return Ingredient.of(new ItemLike() {
             @Override
             public Item asItem() {
-                return (Item)TypeTransformer.ObjectToType.accept(ExItems.RUBY);
+                return Utils.convertToMcSafeType(ExItems.RUBY);
             }
         });
     }),
@@ -24,7 +25,7 @@ public enum ToolMaterials implements Tier {
         return Ingredient.of(new ItemLike() {
             @Override
             public Item asItem() {
-                return (Item)TypeTransformer.ObjectToType.accept(ExItems.OBSIDIANBITS);
+                return Utils.convertToMcSafeType(ExItems.OBSIDIANBITS);
             }
         });
     }),
