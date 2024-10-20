@@ -9,6 +9,8 @@ import com.Vrglab.World.Items.Armor.RedstoneArmor;
 import com.Vrglab.World.Items.extras.ToolMaterials;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
+import net.minecraft.world.flag.FeatureFlag;
+import net.minecraft.world.flag.FeatureFlags;
 import net.minecraft.world.item.*;
 import org.Vrglab.Modloader.Registration.Registry;
 
@@ -44,6 +46,10 @@ public class ExItems {
 
         public static Map<ResourceLocation, Object> REDSTONE_TOOL_SET = createToolSet("redstone", ToolMaterials.REDSTONE, new int[]{8, 3, 10, 2, 2}, new float[]{-2f, -2.4f, -3f, -1f, -1f}, getBaseSettings());
 
+        /** COPPER **/
+
+        public static Map<ResourceLocation, Object> COPPER_TOOL_SET = createToolSet("copper", ToolMaterials.COPPER, new int[]{3, 2, 6, 1, -2}, new float[] {-2.4f, -3.0f, -2.8f, -3.1f, -1.0f}, getBaseSettings());
+
 
 
     /**** ARMOUR ****/
@@ -58,7 +64,6 @@ public class ExItems {
         public static Map<ResourceLocation, Object> OBSIDIAN_ARMOR_SET = createArmorSet("obsidian", ArmorMaterials.OBSIDIAN, BaseArmorClass.class, getBaseSettings().fireResistant());
 
 
-
         /** AMETHYST **/
 
         public static Map<ResourceLocation, Object> AMETHYST_ARMOR_SET = createArmorSet("amethyst", ArmorMaterials.AMETHYST, AmethystArmor.class, getBaseSettings());
@@ -67,6 +72,33 @@ public class ExItems {
         /** REDSTONE **/
 
         public static Map<ResourceLocation, Object> REDSTONE_ARMOR_SET = createArmorSet("redstone", ArmorMaterials.REDSTONE, RedstoneArmor.class, getBaseSettings());
+
+
+        /** COPPER **/
+
+        public static Map<ResourceLocation, Object> COPPER_ARMOR_SET = createArmorSet("copper", ArmorMaterials.COPPER, BaseArmorClass.class, getBaseSettings());
+
+
+
+    /* CORE */
+
+    public static void init(){
+    }
+
+    public static Object[] getAll(){
+        List<Object> objs = new ArrayList<>();
+
+        objs.add(RUBY);
+        objs.add(OBSIDIANBITS);
+
+        mapSet(RUBY_TOOL_SET, RUBY_ARMOR_SET, objs);
+        mapSet(OBSIDIAN_TOOL_SET, OBSIDIAN_ARMOR_SET, objs);
+        mapSet(AMETHYST_TOOL_SET, AMETHYST_ARMOR_SET, objs);
+        mapSet(REDSTONE_TOOL_SET, REDSTONE_ARMOR_SET, objs);
+        mapSet(COPPER_TOOL_SET, COPPER_ARMOR_SET, objs);
+
+        return objs.toArray();
+    }
 
 
 
@@ -163,25 +195,4 @@ public class ExItems {
             mapItems(item_map, obj_list);
             mapItems(armor_map, obj_list);
         }
-
-
-
-    /* CORE */
-
-    public static void init(){
-    }
-
-    public static Object[] getAll(){
-        List<Object> objs = new ArrayList<>();
-
-        objs.add(RUBY);
-        objs.add(OBSIDIANBITS);
-
-        mapSet(RUBY_TOOL_SET, RUBY_ARMOR_SET, objs);
-        mapSet(OBSIDIAN_TOOL_SET, OBSIDIAN_ARMOR_SET, objs);
-        mapSet(AMETHYST_TOOL_SET, AMETHYST_ARMOR_SET, objs);
-        mapSet(REDSTONE_TOOL_SET, REDSTONE_ARMOR_SET, objs);
-
-        return objs.toArray();
-    }
 }
