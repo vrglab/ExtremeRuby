@@ -2,8 +2,10 @@ package com.Vrglab.World.Items;
 
 import com.Vrglab.ExtremeRubyMod;
 import com.Vrglab.Utils.Utils;
-import com.Vrglab.World.Items.Armor.*;
+import com.Vrglab.World.Items.Armor.AmethystArmor;
 import com.Vrglab.World.Items.Armor.ArmorMaterials;
+import com.Vrglab.World.Items.Armor.BaseArmorClass;
+import com.Vrglab.World.Items.Armor.RedstoneArmor;
 import com.Vrglab.World.Items.Items.EnderDustItem;
 import com.Vrglab.World.Items.extras.ToolMaterials;
 import net.minecraft.resources.ResourceKey;
@@ -50,16 +52,16 @@ public class ExItems {
         public static Map<ResourceLocation, Object> ENDER_TOOL_SET = createToolSet("ender", ToolMaterials.ENDER, new int[]{5, 3, 8, 2, 2}, new float[]{-2.9f, -2f, -2f, -1f, -1f}, getBaseSettings());
 
 
-    /**** ARMOR ****/
+    /**** ARMOUR ****/
 
         /** RUBY **/
 
-        public static Map<ResourceLocation, Object> RUBY_ARMOR_SET = createArmorSet("ruby", ArmorMaterials.RUBY, getBaseSettings());
+        public static Map<ResourceLocation, Object> RUBY_ARMOR_SET = createArmorSet("ruby", ArmorMaterials.RUBY, BaseArmorClass.class, getBaseSettings());
 
 
         /** OBSIDIAN **/
 
-        public static Map<ResourceLocation, Object> OBSIDIAN_ARMOR_SET = createArmorSet("obsidian", ArmorMaterials.OBSIDIAN, getBaseSettings().fireResistant());
+        public static Map<ResourceLocation, Object> OBSIDIAN_ARMOR_SET = createArmorSet("obsidian", ArmorMaterials.OBSIDIAN, BaseArmorClass.class, getBaseSettings().fireResistant());
 
 
 
@@ -74,30 +76,8 @@ public class ExItems {
 
         /** ENDER **/
 
-        public static Map<ResourceLocation, Object> ENDER_ARMOR_SET = createArmorSet("ender", ArmorMaterials.ENDER, EnderArmor.class, getBaseSettings());
+        public static Map<ResourceLocation, Object> ENDER_ARMOR_SET = createArmorSet("ender", ArmorMaterials.ENDER, BaseArmorClass.class, getBaseSettings());
 
-
-
-    /* CORE */
-
-    public static void init(){
-    }
-
-    public static Object[] getAll(){
-        List<Object> objs = new ArrayList<>();
-
-        objs.add(RUBY);
-        objs.add(OBSIDIANBITS);
-        objs.add(ENDER_DUST);
-
-        mapSet(RUBY_TOOL_SET, RUBY_ARMOR_SET, objs);
-        mapSet(OBSIDIAN_TOOL_SET, OBSIDIAN_ARMOR_SET, objs);
-        mapSet(AMETHYST_TOOL_SET, AMETHYST_ARMOR_SET, objs);
-        mapSet(REDSTONE_TOOL_SET, REDSTONE_ARMOR_SET, objs);
-        mapSet(ENDER_TOOL_SET, ENDER_ARMOR_SET, objs);
-
-        return objs.toArray();
-    }
 
 
     /** FUNCTIONS AND HELPERS **/
@@ -130,38 +110,28 @@ public class ExItems {
 
         /** TOOL SET CREATION HELPERS **/
 
-        private static Map<ResourceLocation, Object> createToolSet(String name, ToolMaterials material, int[] attack_damages, float[] attack_speeds, Item.Properties[] item_properties, Class[] classes) {
+        private static Map<ResourceLocation, Object> createToolSet(String name, ToolMaterials material, int[] attack_damages, float[] attack_speeds, Item.Properties[] item_properties) {
             Map<ResourceLocation, Object> map = new HashMap<>();
             map.put(Utils.createLocation(name.toLowerCase()+ "_sword"), Registry.RegisterItem(name.toLowerCase() + "_sword", ExtremeRubyMod.MOD_ID,
-                    ()->Utils.createInstance(classes[0], material, attack_damages[0], attack_speeds[0], item_properties[0])));
+                    ()->new SwordItem(material, attack_damages[0], attack_speeds[0], item_properties[0])));
 
             map.put(Utils.createLocation(name.toLowerCase() + "_pickaxe"),Registry.RegisterItem(name.toLowerCase() + "_pickaxe", ExtremeRubyMod.MOD_ID,
-                    ()->Utils.createInstance(classes[1], material, attack_damages[1], attack_speeds[1], item_properties[1])));
+                    ()->new PickaxeItem(material, attack_damages[1], attack_speeds[1], item_properties[1])));
 
             map.put(Utils.createLocation(name.toLowerCase() + "_axe"),  Registry.RegisterItem(name.toLowerCase() + "_axe", ExtremeRubyMod.MOD_ID,
-                    ()->Utils.createInstance(classes[2], material, (float)attack_damages[2], attack_speeds[2], item_properties[2])));
+                    ()->new AxeItem(material, attack_damages[2], attack_speeds[2], item_properties[2])));
 
             map.put(Utils.createLocation(name.toLowerCase() + "_shovel"),    Registry.RegisterItem(name.toLowerCase() + "_shovel", ExtremeRubyMod.MOD_ID,
-                    ()->Utils.createInstance(classes[3], material, (float)attack_damages[3], attack_speeds[3], item_properties[3])));
+                    ()->new ShovelItem(material, attack_damages[3], attack_speeds[3], item_properties[3])));
 
             map.put(Utils.createLocation(name.toLowerCase() + "_hoe"), Registry.RegisterItem(name.toLowerCase() + "_hoe", ExtremeRubyMod.MOD_ID,
-                    ()->Utils.createInstance(classes[4], material, attack_damages[4], attack_speeds[4], item_properties[4])));
+                    ()->new HoeItem(material, attack_damages[4], attack_speeds[4], item_properties[4])));
 
             return map;
         }
 
         private static Map<ResourceLocation, Object> createToolSet(String name, ToolMaterials material, int[] attack_damages, float[] attack_speeds, Item.Properties item_properties) {
-            return createToolSet(name, material, attack_damages, attack_speeds,
-                    new Item.Properties[]{item_properties, item_properties, item_properties, item_properties,item_properties},
-                    new Class[]{SwordItem.class, PickaxeItem.class, AxeItem.class, ShovelItem.class, HoeItem.class}
-            );
-        }
-
-        private static Map<ResourceLocation, Object> createToolSet(String name, ToolMaterials material, int[] attack_damages, float[] attack_speeds, Item.Properties item_properties, Class[] classes) {
-            return createToolSet(name, material, attack_damages, attack_speeds,
-                    new Item.Properties[]{item_properties, item_properties, item_properties, item_properties,item_properties},
-                    classes
-            );
+            return createToolSet(name, material, attack_damages, attack_speeds, new Item.Properties[]{item_properties, item_properties, item_properties, item_properties,item_properties});
         }
 
 
@@ -170,8 +140,11 @@ public class ExItems {
         private static <T extends ArmorItem> Map<ResourceLocation, Object> createArmorSet(String name, ArmorMaterials material, Class<T> armor_class, Item.Properties[] item_properties) {
             Map<ResourceLocation, Object> map = new HashMap<>();
 
-            map.put(Utils.createLocation(name.toLowerCase()+ "_helmet"),  Registry.RegisterItem(name.toLowerCase()+ "_helmet", ExtremeRubyMod.MOD_ID,
-                    ()->Utils.createInstance(armor_class, material, ArmorItem.Type.HELMET, item_properties[0])));
+            var obj = Registry.RegisterItem(name.toLowerCase()+ "_helmet", ExtremeRubyMod.MOD_ID,
+                    ()->Utils.createInstance(armor_class, material, ArmorItem.Type.HELMET, item_properties[0]));
+
+
+            map.put(Utils.createLocation(name.toLowerCase()+ "_helmet"), obj);
 
             map.put(Utils.createLocation(name.toLowerCase()+ "_chestplate"), Registry.RegisterItem(name.toLowerCase()+ "_chestplate", ExtremeRubyMod.MOD_ID,
                     ()->Utils.createInstance(armor_class, material, ArmorItem.Type.CHESTPLATE, item_properties[1])));
@@ -188,12 +161,6 @@ public class ExItems {
             return createArmorSet(name, material, armor_class, new Item.Properties[]{item_properties, item_properties, item_properties, item_properties,item_properties});
         }
 
-        private static  <T extends ArmorItem> Map<ResourceLocation, Object> createArmorSet(String name, ArmorMaterials material, Item.Properties item_properties) {
-            return createArmorSet(name, material, BaseArmorClass.class, new Item.Properties[]{item_properties, item_properties, item_properties, item_properties,item_properties});
-        }
-
-
-
         /** get all mapping helper **/
 
         private static void mapItems(Map map, List<Object> obj_list){
@@ -206,4 +173,27 @@ public class ExItems {
             mapItems(item_map, obj_list);
             mapItems(armor_map, obj_list);
         }
+
+
+
+    /* CORE */
+
+    public static void init(){
+    }
+
+    public static Object[] getAll(){
+        List<Object> objs = new ArrayList<>();
+
+        objs.add(RUBY);
+        objs.add(OBSIDIANBITS);
+        objs.add(ENDER_DUST);
+
+        mapSet(RUBY_TOOL_SET, RUBY_ARMOR_SET, objs);
+        mapSet(OBSIDIAN_TOOL_SET, OBSIDIAN_ARMOR_SET, objs);
+        mapSet(AMETHYST_TOOL_SET, AMETHYST_ARMOR_SET, objs);
+        mapSet(REDSTONE_TOOL_SET, REDSTONE_ARMOR_SET, objs);
+        mapSet(ENDER_TOOL_SET, ENDER_ARMOR_SET, objs);
+
+        return objs.toArray();
+    }
 }
