@@ -35,7 +35,7 @@ public enum ArmorMaterials implements ArmorMaterial {
     }),
 
     ENDER("ender", 66,   new int[]{4, 7, 7, 4}, 35, SoundEvents.ARMOR_EQUIP_NETHERITE, 4.0F, 0.1F, () -> {
-        return Ingredient.of(new ItemLike[]{Items.ENDER_PEARL});
+        return Ingredient.of(new ItemLike[]{Utils.convertToMcSafeType(ExItems.ENDER_DUST)});
     })
     ;
 
