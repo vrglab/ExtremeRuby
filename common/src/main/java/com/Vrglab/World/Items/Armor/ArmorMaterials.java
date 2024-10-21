@@ -32,6 +32,10 @@ public enum ArmorMaterials implements ArmorMaterial {
 
     REDSTONE("redstone", 33, new int[]{3, 6, 9, 3}, 10, SoundEvents.ARMOR_EQUIP_GENERIC, 6.0F, 0.2F, () -> {
         return Ingredient.of(new ItemLike[]{Items.REDSTONE});
+    }),
+
+    ENDER("ender", 66,   new int[]{4, 7, 7, 4}, 35, SoundEvents.ARMOR_EQUIP_NETHERITE, 4.0F, 0.1F, () -> {
+        return Ingredient.of(new ItemLike[]{Items.ENDER_PEARL});
     })
     ;
 

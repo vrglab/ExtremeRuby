@@ -36,6 +36,10 @@ public enum ToolMaterials implements Tier {
 
     REDSTONE(5, 3031,10.0f, 5.0f, 22, ()-> {
         return Ingredient.of(new ItemLike[]{Items.REDSTONE});
+    }),
+
+    ENDER(5, 4031, 10.0f, 5.0f, 40, ()->{
+        return Ingredient.of(new ItemLike[]{Items.ENDER_PEARL});
     })
 ;
 
