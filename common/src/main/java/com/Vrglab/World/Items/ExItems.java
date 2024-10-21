@@ -2,10 +2,8 @@ package com.Vrglab.World.Items;
 
 import com.Vrglab.ExtremeRubyMod;
 import com.Vrglab.Utils.Utils;
-import com.Vrglab.World.Items.Armor.AmethystArmor;
+import com.Vrglab.World.Items.Armor.*;
 import com.Vrglab.World.Items.Armor.ArmorMaterials;
-import com.Vrglab.World.Items.Armor.BaseArmorClass;
-import com.Vrglab.World.Items.Armor.RedstoneArmor;
 import com.Vrglab.World.Items.Items.EnderDustItem;
 import com.Vrglab.World.Items.extras.ToolMaterials;
 import net.minecraft.resources.ResourceKey;
@@ -76,7 +74,7 @@ public class ExItems {
 
         /** ENDER **/
 
-        public static Map<ResourceLocation, Object> ENDER_ARMOR_SET = createArmorSet("ender", ArmorMaterials.ENDER, BaseArmorClass.class, getBaseSettings());
+        public static Map<ResourceLocation, Object> ENDER_ARMOR_SET = createArmorSet("ender", ArmorMaterials.ENDER, EnderArmor.class, getBaseSettings());
 
 
 
