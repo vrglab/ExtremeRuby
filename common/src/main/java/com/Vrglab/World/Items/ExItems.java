@@ -44,6 +44,9 @@ public class ExItems {
 
         public static Map<ResourceLocation, Object> REDSTONE_TOOL_SET = createToolSet("redstone", ToolMaterials.REDSTONE, new int[]{8, 3, 10, 2, 2}, new float[]{-2f, -2.4f, -3f, -1f, -1f}, getBaseSettings());
 
+        /** ENDER **/
+
+        public static Map<ResourceLocation, Object> ENDER_TOOL_SET = createToolSet("ender", ToolMaterials.ENDER, new int[]{5, 3, 8, 2, 2}, new float[]{-2.9f, -2f, -2f, -1f, -1f}, getBaseSettings());
 
 
     /**** ARMOR ****/
@@ -67,6 +70,10 @@ public class ExItems {
         /** REDSTONE **/
 
         public static Map<ResourceLocation, Object> REDSTONE_ARMOR_SET = createArmorSet("redstone", ArmorMaterials.REDSTONE, RedstoneArmor.class, getBaseSettings());
+
+        /** ENDER **/
+
+        public static Map<ResourceLocation, Object> ENDER_ARMOR_SET = createArmorSet("ender", ArmorMaterials.ENDER, BaseArmorClass.class, getBaseSettings());
 
 
 
