@@ -46,7 +46,7 @@ public class ExItems {
 
 
 
-    /**** ARMOUR ****/
+    /**** ARMOR ****/
 
         /** RUBY **/
 
@@ -120,19 +120,19 @@ public class ExItems {
             return map;
         }
 
-    private static Map<ResourceLocation, Object> createToolSet(String name, ToolMaterials material, int[] attack_damages, float[] attack_speeds, Item.Properties item_properties) {
-        return createToolSet(name, material, attack_damages, attack_speeds,
-                new Item.Properties[]{item_properties, item_properties, item_properties, item_properties,item_properties},
-                new Class[]{SwordItem.class, PickaxeItem.class, AxeItem.class, ShovelItem.class, HoeItem.class}
-        );
-    }
+        private static Map<ResourceLocation, Object> createToolSet(String name, ToolMaterials material, int[] attack_damages, float[] attack_speeds, Item.Properties item_properties) {
+            return createToolSet(name, material, attack_damages, attack_speeds,
+                    new Item.Properties[]{item_properties, item_properties, item_properties, item_properties,item_properties},
+                    new Class[]{SwordItem.class, PickaxeItem.class, AxeItem.class, ShovelItem.class, HoeItem.class}
+            );
+        }
 
-    private static Map<ResourceLocation, Object> createToolSet(String name, ToolMaterials material, int[] attack_damages, float[] attack_speeds, Item.Properties item_properties, Class[] classes) {
-        return createToolSet(name, material, attack_damages, attack_speeds,
-                new Item.Properties[]{item_properties, item_properties, item_properties, item_properties,item_properties},
-                classes
-        );
-    }
+        private static Map<ResourceLocation, Object> createToolSet(String name, ToolMaterials material, int[] attack_damages, float[] attack_speeds, Item.Properties item_properties, Class[] classes) {
+            return createToolSet(name, material, attack_damages, attack_speeds,
+                    new Item.Properties[]{item_properties, item_properties, item_properties, item_properties,item_properties},
+                    classes
+            );
+        }
 
 
         /** ARMOR CREATION HELPERS **/
@@ -140,11 +140,8 @@ public class ExItems {
         private static <T extends ArmorItem> Map<ResourceLocation, Object> createArmorSet(String name, ArmorMaterials material, Class<T> armor_class, Item.Properties[] item_properties) {
             Map<ResourceLocation, Object> map = new HashMap<>();
 
-            var obj = Registry.RegisterItem(name.toLowerCase()+ "_helmet", ExtremeRubyMod.MOD_ID,
-                    ()->Utils.createInstance(armor_class, material, ArmorItem.Type.HELMET, item_properties[0]));
-
-
-            map.put(Utils.createLocation(name.toLowerCase()+ "_helmet"), obj);
+            map.put(Utils.createLocation(name.toLowerCase()+ "_helmet"),  Registry.RegisterItem(name.toLowerCase()+ "_helmet", ExtremeRubyMod.MOD_ID,
+                    ()->Utils.createInstance(armor_class, material, ArmorItem.Type.HELMET, item_properties[0])));
 
             map.put(Utils.createLocation(name.toLowerCase()+ "_chestplate"), Registry.RegisterItem(name.toLowerCase()+ "_chestplate", ExtremeRubyMod.MOD_ID,
                     ()->Utils.createInstance(armor_class, material, ArmorItem.Type.CHESTPLATE, item_properties[1])));
@@ -161,9 +158,11 @@ public class ExItems {
             return createArmorSet(name, material, armor_class, new Item.Properties[]{item_properties, item_properties, item_properties, item_properties,item_properties});
         }
 
-    private static  <T extends ArmorItem> Map<ResourceLocation, Object> createArmorSet(String name, ArmorMaterials material, Item.Properties item_properties) {
-        return createArmorSet(name, material, BaseArmorClass.class, new Item.Properties[]{item_properties, item_properties, item_properties, item_properties,item_properties});
-    }
+        private static  <T extends ArmorItem> Map<ResourceLocation, Object> createArmorSet(String name, ArmorMaterials material, Item.Properties item_properties) {
+            return createArmorSet(name, material, BaseArmorClass.class, new Item.Properties[]{item_properties, item_properties, item_properties, item_properties,item_properties});
+        }
+
+
 
         /** get all mapping helper **/
 
@@ -177,7 +176,6 @@ public class ExItems {
             mapItems(item_map, obj_list);
             mapItems(armor_map, obj_list);
         }
-
 
 
     /* CORE */
