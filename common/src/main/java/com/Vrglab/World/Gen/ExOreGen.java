@@ -1,6 +1,7 @@
 package com.Vrglab.World.Gen;
 
 import com.Vrglab.ExtremeRubyMod;
+import com.Vrglab.Utils.Utils;
 import com.Vrglab.World.Blocks.ExBlocks;
 import dev.architectury.registry.level.biome.BiomeModifications;
 import net.minecraft.core.Holder;
@@ -16,9 +17,9 @@ public class ExOreGen {
 
     /** CONFIGURED FEATS **/
     public static Object RUBY_ORE_CONFIGURED = Registry.RegisterOreConfiguredFeature("ruby_ore_configured", ExtremeRubyMod.MOD_ID,
-            ()->OreGenFeatCreationHelper.create().addMatchCase(GenReplaceables.STONE_ORE_REPLACEABLES, ExBlocks.RUBY_ORE).build(), 4);
+            ()->OreGenFeatCreationHelper.create().addMatchCase(GenReplaceables.STONE_ORE_REPLACEABLES, ExBlocks.RUBY_ORE_SET.get(Utils.createLocation("ruby_ore"))).build(), 4);
     public static Object DEEPSLATE_RUBY_ORE_CONFIGURED = Registry.RegisterOreConfiguredFeature("deepslate_ruby_ore_configured", ExtremeRubyMod.MOD_ID,
-            ()->OreGenFeatCreationHelper.create().addMatchCase(GenReplaceables.DEEPSLATE_ORE_REPLACEABLES, ExBlocks.RUBY_ORE_DEEPSLATE).build(), 4);
+            ()->OreGenFeatCreationHelper.create().addMatchCase(GenReplaceables.DEEPSLATE_ORE_REPLACEABLES, ExBlocks.RUBY_ORE_SET.get(Utils.createLocation("deepslate_ruby_ore"))).build(), 4);
 
 
     /** PLACED FEATS **/

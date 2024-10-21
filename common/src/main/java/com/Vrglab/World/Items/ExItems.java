@@ -70,6 +70,26 @@ public class ExItems {
 
 
 
+    /* CORE */
+
+    public static void init(){
+    }
+
+    public static Object[] getAll(){
+        List<Object> objs = new ArrayList<>();
+
+        objs.add(RUBY);
+        objs.add(OBSIDIANBITS);
+
+        mapSet(RUBY_TOOL_SET, RUBY_ARMOR_SET, objs);
+        mapSet(OBSIDIAN_TOOL_SET, OBSIDIAN_ARMOR_SET, objs);
+        mapSet(AMETHYST_TOOL_SET, AMETHYST_ARMOR_SET, objs);
+        mapSet(REDSTONE_TOOL_SET, REDSTONE_ARMOR_SET, objs);
+
+        return objs.toArray();
+    }
+
+
     /** FUNCTIONS AND HELPERS **/
 
         /** ITEM SETTINGS HELPER FUNCTIONS **/
@@ -109,10 +129,10 @@ public class ExItems {
                     ()->Utils.createInstance(classes[1], material, attack_damages[1], attack_speeds[1], item_properties[1])));
 
             map.put(Utils.createLocation(name.toLowerCase() + "_axe"),  Registry.RegisterItem(name.toLowerCase() + "_axe", ExtremeRubyMod.MOD_ID,
-                    ()->Utils.createInstance(classes[2], material, attack_damages[2], attack_speeds[2], item_properties[2])));
+                    ()->Utils.createInstance(classes[2], material, (float)attack_damages[2], attack_speeds[2], item_properties[2])));
 
             map.put(Utils.createLocation(name.toLowerCase() + "_shovel"),    Registry.RegisterItem(name.toLowerCase() + "_shovel", ExtremeRubyMod.MOD_ID,
-                    ()->Utils.createInstance(classes[3], material, attack_damages[3], attack_speeds[3], item_properties[3])));
+                    ()->Utils.createInstance(classes[3], material, (float)attack_damages[3], attack_speeds[3], item_properties[3])));
 
             map.put(Utils.createLocation(name.toLowerCase() + "_hoe"), Registry.RegisterItem(name.toLowerCase() + "_hoe", ExtremeRubyMod.MOD_ID,
                     ()->Utils.createInstance(classes[4], material, attack_damages[4], attack_speeds[4], item_properties[4])));
@@ -176,24 +196,4 @@ public class ExItems {
             mapItems(item_map, obj_list);
             mapItems(armor_map, obj_list);
         }
-
-
-    /* CORE */
-
-    public static void init(){
-    }
-
-    public static Object[] getAll(){
-        List<Object> objs = new ArrayList<>();
-
-        objs.add(RUBY);
-        objs.add(OBSIDIANBITS);
-
-        mapSet(RUBY_TOOL_SET, RUBY_ARMOR_SET, objs);
-        mapSet(OBSIDIAN_TOOL_SET, OBSIDIAN_ARMOR_SET, objs);
-        mapSet(AMETHYST_TOOL_SET, AMETHYST_ARMOR_SET, objs);
-        mapSet(REDSTONE_TOOL_SET, REDSTONE_ARMOR_SET, objs);
-
-        return objs.toArray();
-    }
 }

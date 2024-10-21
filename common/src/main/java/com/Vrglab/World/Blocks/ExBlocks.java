@@ -38,7 +38,9 @@ public class ExBlocks {
                 new BlockBehaviour.Properties[]{getToolRequiredSettings(4,4), getToolRequiredSettings(4,4)},
                 new Item.Properties[]{getBaseItemSettings(), getBaseItemSettings()},
                 new int[]{1, -20},
-                new int[] {10, 7}
+                new int[] {10, 7},
+                false,
+                false
                 );
 
 
@@ -88,14 +90,33 @@ public class ExBlocks {
 
         /** SET CREATION HELPERS **/
 
-        private static Map<ResourceLocation, Object> createOreSet(String ore_name, Class[] Block_types, BlockBehaviour.Properties[] properties, Item.Properties[] item_properties, int[] lowst_spawn_point, int[] highest_spawn_point) {
+        private static Map<ResourceLocation, Object> createOreSet(String ore_name, Class[] Block_types, BlockBehaviour.Properties[] properties, Item.Properties[] item_properties, int[] lowst_spawn_point, int[] highest_spawn_point, boolean end_types, boolean nether_types) {
             Map<ResourceLocation, Object> map = new HashMap<>();
+            String basic_ore_name = ore_name.toLowerCase() + "_ore", deepslate_ore_name = "deepslate_" + basic_ore_name, end_ore_name = "ender_" + basic_ore_name, nether_ore_name = "netherite_" + basic_ore_name;
 
-            map.put(Utils.createLocation(ore_name.toLowerCase() + "_ore"), Registry.RegisterBlock(ore_name.toLowerCase() + "_ore", ExtremeRubyMod.MOD_ID,
+            map.put(Utils.createLocation(basic_ore_name), Registry.RegisterBlock(basic_ore_name, ExtremeRubyMod.MOD_ID,
                     ()-> Utils.createInstance(Block_types[0], UniformInt.of(lowst_spawn_point[0],highest_spawn_point[0]), properties[0]), ()->item_properties[0]));
 
-            map.put(Utils.createLocation("deepslate" + ore_name.toLowerCase() + "_ore"), Registry.RegisterBlock("deepslate" + ore_name.toLowerCase() + "_ore", ExtremeRubyMod.MOD_ID,
+            map.put(Utils.createLocation(deepslate_ore_name), Registry.RegisterBlock(deepslate_ore_name, ExtremeRubyMod.MOD_ID,
                     ()-> Utils.createInstance(Block_types[1], UniformInt.of(lowst_spawn_point[1],highest_spawn_point[1]), properties[1]), ()->item_properties[1]));
+
+
+            if(end_types) {
+                map.put(Utils.createLocation(end_ore_name), Registry.RegisterBlock(end_ore_name, ExtremeRubyMod.MOD_ID,
+                        ()-> Utils.createInstance(Block_types[2], UniformInt.of(lowst_spawn_point[2],highest_spawn_point[2]), properties[2]), ()->item_properties[2]));
+            }
+
+            int netherite_array_id;
+            if(end_types && nether_types) {
+                netherite_array_id = 3;
+            } else {
+                netherite_array_id = 2;
+            }
+
+            if(nether_types) {
+                map.put(Utils.createLocation(nether_ore_name), Registry.RegisterBlock(nether_ore_name, ExtremeRubyMod.MOD_ID,
+                        ()-> Utils.createInstance(Block_types[netherite_array_id], UniformInt.of(lowst_spawn_point[netherite_array_id],highest_spawn_point[netherite_array_id]), properties[netherite_array_id]), ()->item_properties[netherite_array_id]));
+            }
 
             return map;
         }

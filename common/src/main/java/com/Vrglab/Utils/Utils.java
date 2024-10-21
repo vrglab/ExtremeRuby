@@ -39,7 +39,8 @@ public class Utils {
                 Class<?>[] parameterTypes = constructor.getParameterTypes();
                 if (parameterTypes.length == argTypes.length) {
                     for (int i = 0; i < parameterTypes.length; i++) {
-                        if (!parameterTypes[i].isAssignableFrom(argTypes[i])) {
+                        // Check if parameter type matches the argument type, considering primitives
+                        if (!isCompatibleType(parameterTypes[i], argTypes[i])) {
                             continue outerLoop; // Skip to the next constructor
                         }
                     }
@@ -53,8 +54,25 @@ public class Utils {
             }
 
             return foundConstructor.newInstance(constructorArgs);
-        } catch (Throwable t){
+        } catch (Throwable t) {
             return null;
         }
+    }
+
+    // Helper method to check compatibility between primitive types and their wrappers
+    private static boolean isCompatibleType(Class<?> parameterType, Class<?> argType) {
+        // Handle primitive types explicitly
+        if (parameterType.isPrimitive()) {
+            if (parameterType == int.class && argType == Integer.class) return true;
+            if (parameterType == long.class && argType == Long.class) return true;
+            if (parameterType == double.class && argType == Double.class) return true;
+            if (parameterType == float.class && argType == Float.class) return true;
+            if (parameterType == boolean.class && argType == Boolean.class) return true;
+            if (parameterType == char.class && argType == Character.class) return true;
+            if (parameterType == byte.class && argType == Byte.class) return true;
+            if (parameterType == short.class && argType == Short.class) return true;
+        }
+        // Fallback to the regular isAssignableFrom check
+        return parameterType.isAssignableFrom(argType);
     }
 }
