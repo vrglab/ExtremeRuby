@@ -39,7 +39,7 @@ public enum ToolMaterials implements Tier {
     }),
 
     ENDER(5, 4031, 10.0f, 5.0f, 40, ()->{
-        return Ingredient.of(new ItemLike[]{Items.ENDER_PEARL});
+        return Ingredient.of(new ItemLike[]{Utils.convertToMcSafeType(ExItems.ENDER_DUST)});
     })
 ;
 
