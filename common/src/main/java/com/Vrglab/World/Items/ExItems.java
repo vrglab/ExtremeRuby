@@ -2,10 +2,8 @@ package com.Vrglab.World.Items;
 
 import com.Vrglab.ExtremeRubyMod;
 import com.Vrglab.Utils.Utils;
-import com.Vrglab.World.Items.Armor.AmethystArmor;
+import com.Vrglab.World.Items.Armor.*;
 import com.Vrglab.World.Items.Armor.ArmorMaterials;
-import com.Vrglab.World.Items.Armor.BaseArmorClass;
-import com.Vrglab.World.Items.Armor.RedstoneArmor;
 import com.Vrglab.World.Items.Items.EnderDustItem;
 import com.Vrglab.World.Items.extras.ToolMaterials;
 import net.minecraft.resources.ResourceKey;
@@ -76,7 +74,7 @@ public class ExItems {
 
         /** ENDER **/
 
-        public static Map<ResourceLocation, Object> ENDER_ARMOR_SET = createArmorSet("ender", ArmorMaterials.ENDER, BaseArmorClass.class, getBaseSettings());
+        public static Map<ResourceLocation, Object> ENDER_ARMOR_SET = createArmorSet("ender", ArmorMaterials.ENDER, EnderArmor.class, getBaseSettings());
 
 
 
@@ -90,11 +88,13 @@ public class ExItems {
 
         objs.add(RUBY);
         objs.add(OBSIDIANBITS);
+        objs.add(ENDER_DUST);
 
         mapSet(RUBY_TOOL_SET, RUBY_ARMOR_SET, objs);
         mapSet(OBSIDIAN_TOOL_SET, OBSIDIAN_ARMOR_SET, objs);
         mapSet(AMETHYST_TOOL_SET, AMETHYST_ARMOR_SET, objs);
         mapSet(REDSTONE_TOOL_SET, REDSTONE_ARMOR_SET, objs);
+        mapSet(ENDER_TOOL_SET, ENDER_ARMOR_SET, objs);
 
         return objs.toArray();
     }
