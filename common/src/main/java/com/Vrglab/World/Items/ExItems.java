@@ -6,6 +6,7 @@ import com.Vrglab.World.Items.Armor.AmethystArmor;
 import com.Vrglab.World.Items.Armor.ArmorMaterials;
 import com.Vrglab.World.Items.Armor.BaseArmorClass;
 import com.Vrglab.World.Items.Armor.RedstoneArmor;
+import com.Vrglab.World.Items.Items.EnderDustItem;
 import com.Vrglab.World.Items.extras.ToolMaterials;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -23,6 +24,8 @@ public class ExItems {
         public static Object RUBY = createItem("ruby", getBaseSettings());
 
         public static Object OBSIDIANBITS = createItem("obsidianbits", getBaseSettings().fireResistant());
+
+        public static Object ENDER_DUST = createItem("enderdust", getBaseSettings(), EnderDustItem.class);
 
 
     /**** TOOLS ****/
@@ -183,6 +186,7 @@ public class ExItems {
 
         objs.add(RUBY);
         objs.add(OBSIDIANBITS);
+        objs.add(ENDER_DUST);
 
         mapSet(RUBY_TOOL_SET, RUBY_ARMOR_SET, objs);
         mapSet(OBSIDIAN_TOOL_SET, OBSIDIAN_ARMOR_SET, objs);
