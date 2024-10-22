@@ -17,7 +17,7 @@ public class CopperHoe extends HoeItem {
     @Override
     public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int i, boolean bl) {
         super.inventoryTick(itemStack, level, entity, i, bl);
-        CopperUtils.ageCopperItemStack(itemStack, level, entity, CopperUtils.MAX_OXIDATION_STAGE);
+        CopperUtils.ageCopperItemStack(itemStack, level, entity);
     }
 
     @Override
