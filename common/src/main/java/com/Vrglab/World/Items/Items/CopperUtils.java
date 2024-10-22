@@ -16,9 +16,13 @@ public class CopperUtils {
     public static final int MAX_OXIDATION_STAGE = 3;
 
     public static void ageCopperItemStack(ItemStack itemStack, Level level, Entity entity, int max_oxizidation_stage) {
-        CompoundTag tag = itemStack.getOrCreateTag();
-        if (!level.isClientSide && !tag.getBoolean("waxed")) {
+        if (!level.isClientSide) {
+            CompoundTag tag = itemStack.getOrCreateTag();
             int oxidationStage = tag.getInt("oxidation_stage");
+
+            if (tag.getBoolean("waxed")) {
+                return;
+            }
 
             // Increase the oxidation stage over time (every 6000 ticks, 5 minutes)
             if (level.getGameTime() % 6000 == 0 && oxidationStage < max_oxizidation_stage) {
