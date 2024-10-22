@@ -6,6 +6,7 @@ import com.Vrglab.World.Items.Armor.AmethystArmor;
 import com.Vrglab.World.Items.Armor.ArmorMaterials;
 import com.Vrglab.World.Items.Armor.BaseArmorClass;
 import com.Vrglab.World.Items.Armor.RedstoneArmor;
+import com.Vrglab.World.Items.Items.*;
 import com.Vrglab.World.Items.extras.ToolMaterials;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -48,7 +49,13 @@ public class ExItems {
 
         /** COPPER **/
 
-        public static Map<ResourceLocation, Object> COPPER_TOOL_SET = createToolSet("copper", ToolMaterials.COPPER, new int[]{3, 2, 6, 1, -2}, new float[] {-2.4f, -3.0f, -2.8f, -3.1f, -1.0f}, getBaseSettings());
+        public static Map<ResourceLocation, Object> COPPER_TOOL_SET = createToolSet("copper",
+                ToolMaterials.COPPER,
+                new int[]{3, 2, 6, 1, -2},
+                new float[] {-2.4f, -3.0f, -2.8f, -3.1f, -1.0f},
+                getBaseSettings(),
+                new Class[]{CopperSword.class, CopperPickaxe.class, CopperAxe.class, CopperShovel.class, CopperHoe.class}
+        );
 
 
 
