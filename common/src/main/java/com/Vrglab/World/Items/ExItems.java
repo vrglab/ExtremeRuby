@@ -101,27 +101,6 @@ public class ExItems {
     }
 
 
-
-    /* CORE */
-
-    public static void init(){
-    }
-
-    public static Object[] getAll(){
-        List<Object> objs = new ArrayList<>();
-
-        objs.add(RUBY);
-        objs.add(OBSIDIANBITS);
-
-        mapSet(RUBY_TOOL_SET, RUBY_ARMOR_SET, objs);
-        mapSet(OBSIDIAN_TOOL_SET, OBSIDIAN_ARMOR_SET, objs);
-        mapSet(AMETHYST_TOOL_SET, AMETHYST_ARMOR_SET, objs);
-        mapSet(REDSTONE_TOOL_SET, REDSTONE_ARMOR_SET, objs);
-
-        return objs.toArray();
-    }
-
-
     /** FUNCTIONS AND HELPERS **/
 
         /** ITEM SETTINGS HELPER FUNCTIONS **/
