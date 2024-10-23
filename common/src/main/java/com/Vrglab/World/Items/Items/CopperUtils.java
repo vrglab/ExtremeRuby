@@ -18,6 +18,7 @@ public class CopperUtils {
     public static final int MAX_OXIDATION_STAGE = 3;
     public static final String OXIDATION_KEY = "oxidation_stage";
     public static final String WAX_KEY = "waxed";
+    private static final int OXI_CYCLE_TICKS = 3000;
 
     private static final int OXIDATION_TICKS_PER_STAGE_MIN = 50 * 24000; // 50 Minecraft days for minimum stage change
     private static final int OXIDATION_TICKS_PER_STAGE_MAX = 80 * 24000; // 80 Minecraft days for maximum stage change
@@ -37,12 +38,9 @@ public class CopperUtils {
             if (oxidationStage < MAX_OXIDATION_STAGE) {
                 long currentTime = level.getGameTime();
 
-                // Generate a random delay based on Minecraft day length (24000 ticks per day)
-                long ticksToNextStage = random.nextInt(OXIDATION_TICKS_PER_STAGE_MAX - OXIDATION_TICKS_PER_STAGE_MIN) + OXIDATION_TICKS_PER_STAGE_MIN;
-
                 long lastOxidizedTick = tag.getLong("last_oxidized_tick");
 
-                if (currentTime - lastOxidizedTick >= ticksToNextStage) {
+                if (currentTime - lastOxidizedTick >= OXI_CYCLE_TICKS) {
                     tag.putInt(OXIDATION_KEY, oxidationStage + 1);
                     tag.putLong("last_oxidized_tick", currentTime);
                     itemStack.setTag(tag);
