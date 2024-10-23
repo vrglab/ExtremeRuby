@@ -42,6 +42,6 @@
     ]
   },
   "mixin": [
-
+    "extreme_ruby.mixins.json"
   ]
 }

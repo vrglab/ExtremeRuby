@@ -2,10 +2,8 @@ package com.Vrglab.World.Items;
 
 import com.Vrglab.ExtremeRubyMod;
 import com.Vrglab.Utils.Utils;
-import com.Vrglab.World.Items.Armor.AmethystArmor;
+import com.Vrglab.World.Items.Armor.*;
 import com.Vrglab.World.Items.Armor.ArmorMaterials;
-import com.Vrglab.World.Items.Armor.BaseArmorClass;
-import com.Vrglab.World.Items.Armor.RedstoneArmor;
 import com.Vrglab.World.Items.extras.ToolMaterials;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -23,6 +21,12 @@ public class ExItems {
         public static Object RUBY = createItem("ruby", getBaseSettings());
 
         public static Object OBSIDIANBITS = createItem("obsidianbits", getBaseSettings().fireResistant());
+
+        /** ELYTRA TYPES **/
+        public static Object COPPER_INF_ELYTRA = createItem("copper_inf_elytra", InfusedElytra.class, getBaseSettings().durability(432).rarity(Rarity.UNCOMMON), Items.COPPER_INGOT, 0.3f, 0f);
+        public static Object IRON_INF_ELYTRA = createItem("iron_inf_elytra", InfusedElytra.class, getBaseSettings().durability(432).rarity(Rarity.UNCOMMON), Items.IRON_INGOT, 0.5f, 0.1f);
+        public static Object GOLD_INF_ELYTRA = createItem("gold_inf_elytra", InfusedElytra.class, getBaseSettings().durability(432).rarity(Rarity.UNCOMMON), Items.GOLD_INGOT, 1f, 0.2f);
+        public static Object DIAMOND_INF_ELYTRA = createItem("diamond_inf_elytra", InfusedElytra.class, getBaseSettings().durability(432).rarity(Rarity.UNCOMMON), Items.DIAMOND, 1.5f, 0.3f);
 
 
     /**** TOOLS ****/
