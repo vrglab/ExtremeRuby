@@ -19,19 +19,4 @@ public class ExtremeRubyModNeoForge {
         NeoForgeRegistryCreator.Create(ModLoadingContext.get().getActiveContainer().getEventBus(), ExtremeRubyMod.MOD_ID);
         ExtremeRubyMod.init();
     }
-
-    @SubscribeEvent
-    public void onPlayerTick(TickEvent.PlayerTickEvent event) {
-        Player player = event.player;
-
-        if (player.isFallFlying() || player.onGround() || player.isInWater() || player.hasEffect(MobEffects.LEVITATION)) {
-            return;
-        }
-
-        ItemStack chestItem = player.getItemBySlot(EquipmentSlot.CHEST);
-
-        if (chestItem.getItem() instanceof InfusedElytra && InfusedElytra.isFlyEnabled(chestItem)) {
-            player.startFallFlying();
-        }
-    }
 }
