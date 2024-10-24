@@ -33,7 +33,7 @@ public abstract class PlayerInputMixin extends Player {
     }
 
     // Mixin into aiStep to modify Elytra flight initiation based on input
-    @Inject(method = "aiStep", at = @At("HEAD"), cancellable = true)
+    @Inject(method = "aiStep", at = @At("HEAD"))
     private void onAiStep(CallbackInfo ci) {
         Player player = (Player) (Object) this;
 
