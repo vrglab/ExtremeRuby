@@ -1,6 +1,7 @@
 package com.Vrglab.World.Items.Armor;
 
 import com.Vrglab.World.Items.Armor.Models.EnderArmorModel;
+import com.Vrglab.World.Items.Items.EnderDustItem;
 import mod.azure.azurelib.common.api.client.model.GeoModel;
 import mod.azure.azurelib.common.internal.common.core.animation.AnimationController;
 import mod.azure.azurelib.common.internal.common.core.animation.RawAnimation;
@@ -52,14 +53,6 @@ public class EnderArmor extends AzureArmor {
     public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int i, boolean bl) {
         super.inventoryTick(itemStack, level, entity, i, bl);
 
-        if (!level.isClientSide && entity instanceof Player player) {
-            level.getEntities(player, player.getBoundingBox().inflate(16), e -> e instanceof EnderMan)
-                    .forEach(e -> {
-                        EnderMan enderman = (EnderMan) e;
-                        if (enderman.getTarget() == player) {
-                            enderman.setTarget(null);
-                        }
-                    });
-        }
+        EnderDustItem.stopEndermanAttack(itemStack, level, entity);
     }
 }
