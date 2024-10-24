@@ -16,6 +16,10 @@ public class EnderDustItem extends Item {
     public void inventoryTick(ItemStack itemStack, Level level, Entity entity, int i, boolean bl) {
         super.inventoryTick(itemStack, level, entity, i, bl);
 
+        EnderDustItem.stopEndermanAttack(itemStack, level, entity);
+    }
+
+    public static void stopEndermanAttack(ItemStack itemStack, Level level, Entity entity) {
         if (!level.isClientSide && entity instanceof Player player) {
             level.getEntities(player, player.getBoundingBox().inflate(16), e -> e instanceof EnderMan)
                     .forEach(e -> {
