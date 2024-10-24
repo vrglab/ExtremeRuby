@@ -2,6 +2,8 @@ package com.Vrglab.World.Blocks;
 
 import com.Vrglab.ExtremeRubyMod;
 import com.Vrglab.Utils.Utils;
+import com.Vrglab.World.Blocks.entities.InfusionTableEntity;
+import com.Vrglab.World.Blocks.entities.type.InfusionTableType;
 import com.Vrglab.World.Items.ExItemGroups;
 
 import net.minecraft.resources.ResourceKey;
@@ -12,6 +14,7 @@ import net.minecraft.world.item.CreativeModeTabs;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.DropExperienceBlock;
+import net.minecraft.world.level.block.entity.BlockEntityType;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 import org.Vrglab.Modloader.Registration.Registry;
 
@@ -42,6 +45,12 @@ public class ExBlocks {
                 false,
                 false
                 );
+
+    /** BLOCK ENTITIES **/
+
+      /** INFUSION TABLE **/
+      public static Object INFUSION_TABLE_TYPE = Registry.RegisterBlock("infusion_table_block", ExtremeRubyMod.MOD_ID, ()-> new InfusionTableType(BlockBehaviour.Properties.of()), ()->getBaseItemSettings());
+      public static Object INFUSION_TABLE_ENTITY = Registry.RegisterBlockEntityType("infusion_table_entity", ExtremeRubyMod.MOD_ID, InfusionTableEntity::new, INFUSION_TABLE_TYPE);
 
 
 
