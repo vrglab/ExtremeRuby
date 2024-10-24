@@ -87,49 +87,31 @@ public class CopperUtils {
     public static String GetDescription(ItemStack stack, EquipmentSlot slot) {
         CompoundTag tag = stack.getOrCreateTag();
         int oxidationStage = tag.getInt(OXIDATION_KEY);
+        String light = ".lightly_oxidized_copper_",
+                semi = ".semi_oxidized_copper_",
+                full = ".fully_oxidized_copper_",
+                basic = ".copper_",
+                waxed = ".waxed_copper_",
+                name = "armor";
 
+        if (tag.getBoolean(WAX_KEY)) {
+            return "item." + ExtremeRubyMod.MOD_ID + waxed + name;
+        }
         switch (slot) {
             case HEAD:
-                if (tag.getBoolean(WAX_KEY)) {
-                    return "item." + ExtremeRubyMod.MOD_ID + ".waxed_copper_helmet";
-                }
-                return switch (oxidationStage) {
-                    case 1 -> "item." + ExtremeRubyMod.MOD_ID + ".lightly_oxidized_copper_helemt";
-                    case 2 -> "item." + ExtremeRubyMod.MOD_ID + ".semi_oxidized_copper_helemt";
-                    case 3 -> "item." + ExtremeRubyMod.MOD_ID + ".fully_oxidized_copper_helemt";
-                    default -> "item." + ExtremeRubyMod.MOD_ID + ".copper_helemt";
-                };
+                name = "helmet";
             case CHEST:
-                if (tag.getBoolean(WAX_KEY)) {
-                    return "item." + ExtremeRubyMod.MOD_ID + ".waxed_copper_chestplate";
-                }
-                return switch (oxidationStage) {
-                    case 1 -> "item." + ExtremeRubyMod.MOD_ID + ".lightly_oxidized_copper_chestplate";
-                    case 2 -> "item." + ExtremeRubyMod.MOD_ID + ".semi_oxidized_copper_chestplate";
-                    case 3 -> "item." + ExtremeRubyMod.MOD_ID + ".fully_oxidized_copper_chestplate";
-                    default -> "item." + ExtremeRubyMod.MOD_ID + ".copper_chestplate";
-                };
+                name = "chestplate";
             case LEGS:
-                if (tag.getBoolean(WAX_KEY)) {
-                    return "item." + ExtremeRubyMod.MOD_ID + ".waxed_copper_leggings";
-                }
-                return switch (oxidationStage) {
-                    case 1 -> "item." + ExtremeRubyMod.MOD_ID + ".lightly_oxidized_copper_leggings";
-                    case 2 -> "item." + ExtremeRubyMod.MOD_ID + ".semi_oxidized_copper_leggings";
-                    case 3 -> "item." + ExtremeRubyMod.MOD_ID + ".fully_oxidized_copper_leggings";
-                    default -> "item." + ExtremeRubyMod.MOD_ID + ".copper_leggings";
-                };
+                name = "leggings";
             case FEET:
-                if (tag.getBoolean(WAX_KEY)) {
-                    return "item." + ExtremeRubyMod.MOD_ID + ".waxed_copper_boots";
-                }
-                return switch (oxidationStage) {
-                    case 1 -> "item." + ExtremeRubyMod.MOD_ID + ".lightly_oxidized_copper_boots";
-                    case 2 -> "item." + ExtremeRubyMod.MOD_ID + ".semi_oxidized_copper_boots";
-                    case 3 -> "item." + ExtremeRubyMod.MOD_ID + ".fully_oxidized_copper_boots";
-                    default -> "item." + ExtremeRubyMod.MOD_ID + ".copper_boots";
-                };
+                name = "boots";
         }
-        return "item." + ExtremeRubyMod.MOD_ID + ".copper_armor";
+        return switch (oxidationStage) {
+            case 1 -> "item." + ExtremeRubyMod.MOD_ID + light + name;
+            case 2 -> "item." + ExtremeRubyMod.MOD_ID + semi + name;
+            case 3 -> "item." + ExtremeRubyMod.MOD_ID + full + name;
+            default -> "item." + ExtremeRubyMod.MOD_ID + basic + name;
+        };
     }
 }
