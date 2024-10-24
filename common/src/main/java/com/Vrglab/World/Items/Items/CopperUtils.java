@@ -5,12 +5,12 @@ import net.minecraft.nbt.CompoundTag;
 import net.minecraft.world.InteractionResult;
 import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.Items;
 import net.minecraft.world.item.context.UseOnContext;
 import net.minecraft.world.level.Level;
 
-import java.util.Random;
 import java.util.function.Supplier;
 
 public class CopperUtils {
@@ -19,11 +19,6 @@ public class CopperUtils {
     public static final String OXIDATION_KEY = "oxidation_stage";
     public static final String WAX_KEY = "waxed";
     private static final int OXI_CYCLE_TICKS = 3000;
-
-    private static final int OXIDATION_TICKS_PER_STAGE_MIN = 50 * 24000; // 50 Minecraft days for minimum stage change
-    private static final int OXIDATION_TICKS_PER_STAGE_MAX = 80 * 24000; // 80 Minecraft days for maximum stage change
-
-    private static final Random random = new Random();
 
     public static void ageCopperItemStack(ItemStack itemStack, Level level, Entity entity) {
         if (!level.isClientSide) {
@@ -52,12 +47,13 @@ public class CopperUtils {
     public static InteractionResult waxCopperTool(UseOnContext context, Supplier<InteractionResult> supper) {
         ItemStack stack = context.getItemInHand();
         CompoundTag tag = stack.getOrCreateTag();
+        Player context_player = context.getPlayer();
 
         // If the player is holding honeycomb in the off hand, prevent further oxidation
-        if (context.getPlayer().getOffhandItem().getItem() == Items.HONEYCOMB) {
+        if (context_player.getOffhandItem().getItem() == Items.HONEYCOMB) {
             tag.putBoolean(WAX_KEY, true);
             stack.setTag(tag);
-            context.getPlayer().getOffhandItem().shrink(1);
+            context_player.getOffhandItem().shrink(1);
             return InteractionResult.SUCCESS;
         }
 
