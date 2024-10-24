@@ -53,11 +53,11 @@ public class CopperUtils {
         ItemStack stack = context.getItemInHand();
         CompoundTag tag = stack.getOrCreateTag();
 
-        // If the player is holding honeycomb, prevent further oxidation
-        if (context.getPlayer().getItemInHand(context.getHand()).getItem() == Items.HONEYCOMB) {
+        // If the player is holding honeycomb in the off hand, prevent further oxidation
+        if (context.getPlayer().getOffhandItem().getItem() == Items.HONEYCOMB) {
             tag.putBoolean(WAX_KEY, true);
             stack.setTag(tag);
-            context.getPlayer().getItemInHand(context.getHand()).shrink(1);
+            context.getPlayer().getOffhandItem().shrink(1);
             return InteractionResult.SUCCESS;
         }
 
