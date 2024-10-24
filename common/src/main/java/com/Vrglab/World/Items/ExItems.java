@@ -2,10 +2,9 @@ package com.Vrglab.World.Items;
 
 import com.Vrglab.ExtremeRubyMod;
 import com.Vrglab.Utils.Utils;
-import com.Vrglab.World.Items.Armor.AmethystArmor;
+import com.Vrglab.World.Items.Armor.*;
 import com.Vrglab.World.Items.Armor.ArmorMaterials;
-import com.Vrglab.World.Items.Armor.BaseArmorClass;
-import com.Vrglab.World.Items.Armor.RedstoneArmor;
+import com.Vrglab.World.Items.Items.*;
 import com.Vrglab.World.Items.extras.ToolMaterials;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.resources.ResourceLocation;
@@ -48,7 +47,13 @@ public class ExItems {
 
         /** COPPER **/
 
-        public static Map<ResourceLocation, Object> COPPER_TOOL_SET = createToolSet("copper", ToolMaterials.COPPER, new int[]{3, 2, 6, 1, -2}, new float[] {-2.4f, -3.0f, -2.8f, -3.1f, -1.0f}, getBaseSettings());
+        public static Map<ResourceLocation, Object> COPPER_TOOL_SET = createToolSet("copper",
+                ToolMaterials.COPPER,
+                new int[]{3, 2, 6, 1, -2},
+                new float[] {-2.4f, -3.0f, -2.8f, -3.1f, -1.0f},
+                getBaseSettings(),
+                new Class[]{CopperSword.class, CopperPickaxe.class, CopperAxe.class, CopperShovel.class, CopperHoe.class}
+        );
 
 
 
@@ -76,7 +81,7 @@ public class ExItems {
 
         /** COPPER **/
 
-        public static Map<ResourceLocation, Object> COPPER_ARMOR_SET = createArmorSet("copper", ArmorMaterials.COPPER, BaseArmorClass.class, getBaseSettings());
+        public static Map<ResourceLocation, Object> COPPER_ARMOR_SET = createArmorSet("copper", ArmorMaterials.COPPER, CopperArmor.class, getBaseSettings());
 
 
 
@@ -96,27 +101,6 @@ public class ExItems {
         mapSet(AMETHYST_TOOL_SET, AMETHYST_ARMOR_SET, objs);
         mapSet(REDSTONE_TOOL_SET, REDSTONE_ARMOR_SET, objs);
         mapSet(COPPER_TOOL_SET, COPPER_ARMOR_SET, objs);
-
-        return objs.toArray();
-    }
-
-
-
-    /* CORE */
-
-    public static void init(){
-    }
-
-    public static Object[] getAll(){
-        List<Object> objs = new ArrayList<>();
-
-        objs.add(RUBY);
-        objs.add(OBSIDIANBITS);
-
-        mapSet(RUBY_TOOL_SET, RUBY_ARMOR_SET, objs);
-        mapSet(OBSIDIAN_TOOL_SET, OBSIDIAN_ARMOR_SET, objs);
-        mapSet(AMETHYST_TOOL_SET, AMETHYST_ARMOR_SET, objs);
-        mapSet(REDSTONE_TOOL_SET, REDSTONE_ARMOR_SET, objs);
 
         return objs.toArray();
     }
