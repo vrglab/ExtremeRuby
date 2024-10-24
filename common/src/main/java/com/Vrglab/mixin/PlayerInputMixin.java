@@ -35,7 +35,7 @@ public abstract class PlayerInputMixin extends Player {
     }
 
     // Mixin into aiStep to modify Elytra flight initiation based on input
-    @Inject(method = "aiStep", at = @At("HEAD"))
+    @Inject(method = "aiStep", at = @At(value = "INVOKE", target = "Lnet/minecraft/client/player/LocalPlayer;tryToStartFallFlying()Z", shift = At.Shift.BEFORE), cancellable = true)
     private void onAiStep(CallbackInfo ci) {
         Player player = (Player) (Object) this;
 
@@ -50,6 +50,7 @@ public abstract class PlayerInputMixin extends Player {
 
                 if (this._tryToStartFallFlying()) {
                     connection.send(new ServerboundPlayerCommandPacket(player, ServerboundPlayerCommandPacket.Action.START_FALL_FLYING));
+                    ci.cancel();
                 }
             }
         }
