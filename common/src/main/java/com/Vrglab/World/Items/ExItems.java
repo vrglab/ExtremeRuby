@@ -23,11 +23,11 @@ public class ExItems {
         public static Object OBSIDIANBITS = createItem("obsidianbits", getBaseSettings().fireResistant());
 
         /** ELYTRA TYPES **/
-        public static Object COPPER_INF_ELYTRA = createItem("copper_inf_elytra", InfusedElytra.class, getBaseSettings().durability(432).rarity(Rarity.UNCOMMON), Items.COPPER_INGOT, 0.3f, 0f);
-        public static Object IRON_INF_ELYTRA = createItem("iron_inf_elytra", InfusedElytra.class, getBaseSettings().durability(432).rarity(Rarity.UNCOMMON), Items.IRON_INGOT, 0.5f, 0.1f);
-        public static Object GOLD_INF_ELYTRA = createItem("gold_inf_elytra", InfusedElytra.class, getBaseSettings().durability(432).rarity(Rarity.UNCOMMON), Items.GOLD_INGOT, 1f, 0.2f);
-        public static Object DIAMOND_INF_ELYTRA = createItem("diamond_inf_elytra", InfusedElytra.class, getBaseSettings().durability(432).rarity(Rarity.UNCOMMON), Items.DIAMOND, 1.5f, 0.3f);
-
+        public static Object COPPER_INF_ELYTRA = createItem("copper_inf_elytra", InfusedElytra.class, getBaseSettings().durability(432).rarity(Rarity.UNCOMMON), Items.COPPER_INGOT, 4f, 0f);
+        public static Object IRON_INF_ELYTRA = createItem("iron_inf_elytra", InfusedElytra.class, getBaseSettings().durability(432).rarity(Rarity.UNCOMMON), Items.IRON_INGOT, 6f, 0f);
+        public static Object GOLD_INF_ELYTRA = createItem("gold_inf_elytra", InfusedElytra.class, getBaseSettings().durability(432).rarity(Rarity.UNCOMMON), Items.GOLD_INGOT, 5f, 0f);
+        public static Object DIAMOND_INF_ELYTRA = createItem("diamond_inf_elytra", InfusedElytra.class, getBaseSettings().durability(432).rarity(Rarity.UNCOMMON), Items.DIAMOND, 8f, 0f);
+        public static Object NETHERITE_INF_ELYTRA = createItem("netherite_inf_elytra", InfusedElytra.class, getBaseSettings().durability(432).rarity(Rarity.UNCOMMON), Items.NETHERITE_INGOT, 8f, 0.1f);
 
     /**** TOOLS ****/
 

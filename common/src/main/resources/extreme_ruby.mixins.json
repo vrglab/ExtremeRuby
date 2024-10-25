@@ -7,7 +7,7 @@
   ],
   "mixins": [
     "PlayerEntityMixin",
-    "PlayerInputMixin"
+    "LivingEntityMixin"
   ],
   "injectors": {
     "defaultRequire": 1
