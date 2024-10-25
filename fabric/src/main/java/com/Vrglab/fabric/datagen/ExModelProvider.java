@@ -1,5 +1,6 @@
 package com.Vrglab.fabric.datagen;
 
+import com.Vrglab.ExtremeRubyMod;
 import net.fabricmc.fabric.api.datagen.v1.FabricDataOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricModelProvider;
 import net.minecraft.data.PackOutput;
@@ -17,11 +18,11 @@ public class ExModelProvider extends FabricModelProvider {
 
     @Override
     public void generateBlockStateModels(BlockModelGenerators blockStateModelGenerator) {
-        FabricLikeRegisteryCreator.callBlockDataGen(blockStateModelGenerator, VLModInfo.MOD_ID);
+        FabricLikeRegisteryCreator.callBlockDataGen(blockStateModelGenerator, ExtremeRubyMod.MOD_ID);
     }
 
     @Override
     public void generateItemModels(ItemModelGenerators itemModelGenerator) {
-        FabricLikeRegisteryCreator.callItemDataGen(itemModelGenerator, VLModInfo.MOD_ID);
+        FabricLikeRegisteryCreator.callItemDataGen(itemModelGenerator, ExtremeRubyMod.MOD_ID);
     }
 }

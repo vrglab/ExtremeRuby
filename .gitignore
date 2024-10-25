@@ -30,3 +30,5 @@ forge*changelog.txt
 .cache
 /*/.cache/
 /.cache/
+/fabric/src/main/generated/
+/fabric/src/main/generated/
