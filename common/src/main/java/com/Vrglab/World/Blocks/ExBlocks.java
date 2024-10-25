@@ -61,6 +61,7 @@ public class ExBlocks {
     public static Object[] getAll(){
         List<Object> objs = new ArrayList<>();
         objs.add(RUBY_BLOCK);
+        objs.add(INFUSION_TABLE_TYPE);
 
         mapSet(RUBY_ORE_SET, objs);
 

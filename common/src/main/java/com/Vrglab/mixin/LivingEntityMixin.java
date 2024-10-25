@@ -9,6 +9,7 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.protocol.game.ServerboundPlayerCommandPacket;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.EquipmentSlot;
+import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.ElytraItem;
 import net.minecraft.world.item.Item;
@@ -19,14 +20,10 @@ import org.spongepowered.asm.mixin.Shadow;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Redirect;
 
-@Mixin(LocalPlayer.class) // or ClientPlayerEntity for older versions
-public abstract class PlayerInputMixin extends Player {
+@Mixin(LivingEntity.class)
+public abstract class LivingEntityMixin {
 
-    public PlayerInputMixin(Level level, BlockPos blockPos, float f, GameProfile gameProfile) {
-        super(level, blockPos, f, gameProfile);
-    }
-
-    @Redirect(method = "aiStep",
+    @Redirect(method = "updateFallFlying",
             at = @At(value = "INVOKE", target = "Lnet/minecraft/world/item/ItemStack;is(Lnet/minecraft/world/item/Item;)Z"))
     private boolean onAiStep(ItemStack instance, Item item) {
         var test = instance.getItem() instanceof ElytraItem;
