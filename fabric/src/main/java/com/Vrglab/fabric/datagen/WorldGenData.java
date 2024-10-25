@@ -14,7 +14,7 @@ public class WorldGenData extends FabricDynamicRegistryProvider {
 
     @Override
     protected void configure(HolderLookup.Provider registries, Entries entries) {
-        FabricLikeRegisteryCreator.configureBootstrappables(registries, entries);
+        FabricLikeRegisteryCreator.configureBootstrapped(registries, entries);
     }
 
     @Override
