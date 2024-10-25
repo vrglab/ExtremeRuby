@@ -137,29 +137,39 @@ public class ExItems {
 
         /** TOOL SET CREATION HELPERS **/
 
-        private static Map<ResourceLocation, Object> createToolSet(String name, ToolMaterials material, int[] attack_damages, float[] attack_speeds, Item.Properties[] item_properties) {
+        private static Map<ResourceLocation, Object> createToolSet(String name, ToolMaterials material, int[] attack_damages, float[] attack_speeds, Item.Properties[] item_properties, Class[] classes) {
             Map<ResourceLocation, Object> map = new HashMap<>();
             map.put(Utils.createLocation(name.toLowerCase()+ "_sword"), Registry.RegisterItem(name.toLowerCase() + "_sword", ExtremeRubyMod.MOD_ID,
-                    ()->new SwordItem(material, attack_damages[0], attack_speeds[0], item_properties[0])));
+                    ()->Utils.createInstance(classes[0], material, attack_damages[0], attack_speeds[0], item_properties[0])));
 
             map.put(Utils.createLocation(name.toLowerCase() + "_pickaxe"),Registry.RegisterItem(name.toLowerCase() + "_pickaxe", ExtremeRubyMod.MOD_ID,
-                    ()->new PickaxeItem(material, attack_damages[1], attack_speeds[1], item_properties[1])));
+                    ()->Utils.createInstance(classes[1], material, attack_damages[1], attack_speeds[1], item_properties[1])));
 
             map.put(Utils.createLocation(name.toLowerCase() + "_axe"),  Registry.RegisterItem(name.toLowerCase() + "_axe", ExtremeRubyMod.MOD_ID,
-                    ()->new AxeItem(material, attack_damages[2], attack_speeds[2], item_properties[2])));
+                    ()->Utils.createInstance(classes[2], material, (float)attack_damages[2], attack_speeds[2], item_properties[2])));
 
             map.put(Utils.createLocation(name.toLowerCase() + "_shovel"),    Registry.RegisterItem(name.toLowerCase() + "_shovel", ExtremeRubyMod.MOD_ID,
-                    ()->new ShovelItem(material, attack_damages[3], attack_speeds[3], item_properties[3])));
+                    ()->Utils.createInstance(classes[3], material, (float)attack_damages[3], attack_speeds[3], item_properties[3])));
 
             map.put(Utils.createLocation(name.toLowerCase() + "_hoe"), Registry.RegisterItem(name.toLowerCase() + "_hoe", ExtremeRubyMod.MOD_ID,
-                    ()->new HoeItem(material, attack_damages[4], attack_speeds[4], item_properties[4])));
+                    ()->Utils.createInstance(classes[4], material, attack_damages[4], attack_speeds[4], item_properties[4])));
 
             return map;
         }
 
-        private static Map<ResourceLocation, Object> createToolSet(String name, ToolMaterials material, int[] attack_damages, float[] attack_speeds, Item.Properties item_properties) {
-            return createToolSet(name, material, attack_damages, attack_speeds, new Item.Properties[]{item_properties, item_properties, item_properties, item_properties,item_properties});
-        }
+    private static Map<ResourceLocation, Object> createToolSet(String name, ToolMaterials material, int[] attack_damages, float[] attack_speeds, Item.Properties item_properties) {
+        return createToolSet(name, material, attack_damages, attack_speeds,
+                new Item.Properties[]{item_properties, item_properties, item_properties, item_properties,item_properties},
+                new Class[]{SwordItem.class, PickaxeItem.class, AxeItem.class, ShovelItem.class, HoeItem.class}
+        );
+    }
+
+    private static Map<ResourceLocation, Object> createToolSet(String name, ToolMaterials material, int[] attack_damages, float[] attack_speeds, Item.Properties item_properties, Class[] classes) {
+        return createToolSet(name, material, attack_damages, attack_speeds,
+                new Item.Properties[]{item_properties, item_properties, item_properties, item_properties,item_properties},
+                classes
+        );
+    }
 
 
         /** ARMOR CREATION HELPERS **/
