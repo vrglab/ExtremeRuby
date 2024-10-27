@@ -1,6 +1,6 @@
 {
   "parent": "minecraft:item/generated",
   "textures": {
-    "layer0": "extreme_ruby:item/ruby_hoe"
+    "layer0": "extreme_ruby:item/ender_axe"
   }
 }
